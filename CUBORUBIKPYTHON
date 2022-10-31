@@ -1,0 +1,3140 @@
+fila1_b=[26,25,29]
+fila2_b=[52,4,32]           #Estas 3 listas son para crear la cara del cubo (Cada lista es una fila)
+fila3_b=[2,46,17]
+
+fila1_a=[27,16,47]
+fila2_a=[43,13,7]
+fila3_a=[45,37,51]
+
+fila1_n=[24,39,36]
+fila2_n=[10,22,5]
+fila3_n=[35,30,9]
+
+fila1_v=[0,50,53]
+fila2_v=[19,31,28]
+fila3_v=[9,21,18]
+
+fila1_r=[33,34,20]
+fila2_r=[1,40,48]
+fila3_r=[11,12,15]
+
+fila1_am=[44,3,42]
+fila2_am=[14,49,23]
+fila3_am=[8,14,38]
+
+f_blanco=[[fila1_b],[fila2_b],[fila3_b]]                #Acá unimos las anteriores listas (filas) para formar la cara completa
+f_azul=[[fila1_a],[fila2_a],[fila3_a]]
+f_naranja=[[fila1_n],[fila2_n],[fila3_n]]
+f_verde=[[fila1_v],[fila2_v],[fila3_v]]
+f_rojo=[[fila1_r],[fila2_r],[fila3_r]]
+f_amarillo=[[fila1_am],[fila2_am],[fila3_am]]
+
+'''MOVER ARRIBA A LA DERECHA'''
+
+def arriba_derecha (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):       #Movimiento arriba (Ubicación respecto al centro azul) a la derecha (Dirección del giro) con respecto al centro azul
+    f_blanco_ur=[[[],[],[]],[[],[],[]],[[],[],[]]]              #Se crea una lista vacia de listas que va a ser la nueva posición de las caras del cubo (En este caso el color blanco)
+    f_blanco_ur[0][0]=f_blanco[0][0][2]   #2                #De acuerdo a la ubicación en el cubo se le asigna el nuevo valor
+    f_blanco_ur[0][1]=f_blanco[1][0][2]   #5
+    f_blanco_ur[0][2]=f_blanco[2][0][2]   #8
+    f_blanco_ur[1][0]=f_blanco[0][0][1]   #1
+    f_blanco_ur[1][1]=f_blanco[1][0][1]   #4
+    f_blanco_ur[1][2]=f_blanco[2][0][1]   #7
+    f_blanco_ur[2][0]=f_blanco[0][0][0]   #0
+    f_blanco_ur[2][1]=f_blanco[1][0][0]   #3
+    f_blanco_ur[2][2]=f_blanco[2][0][0]   #6
+    print("Cara blanca: ",f_blanco_ur)
+    f_azul_ur=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_azul_ur[0][0]=f_rojo[0][0][0]     #36
+    f_azul_ur[0][1]=f_rojo[0][0][1]     #37
+    f_azul_ur[0][2]=f_rojo[0][0][2]     #38
+    f_azul_ur[1][0]=f_azul[1][0][0]   #12
+    f_azul_ur[1][1]=f_azul[1][0][1]   #13
+    f_azul_ur[1][2]=f_azul[1][0][2]   #14
+    f_azul_ur[2][0]=f_azul[2][0][0]   #15
+    f_azul_ur[2][1]=f_azul[2][0][1]   #16
+    f_azul_ur[2][2]=f_azul[2][0][2]   #17
+    print("Cara azul: ", f_azul_ur)
+    f_naranja_ur = [[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_ur[0][0]=f_azul[0][0][0]     #36
+    f_naranja_ur[0][1]=f_azul[0][0][1]     #37
+    f_naranja_ur[0][2]=f_azul[0][0][2]     #38
+    f_naranja_ur[1][0]=f_naranja[1][0][0]   #12
+    f_naranja_ur[1][1]=f_naranja[1][0][1]   #13
+    f_naranja_ur[1][2]=f_naranja[1][0][2]   #14
+    f_naranja_ur[2][0]=f_naranja[2][0][0]   #15
+    f_naranja_ur[2][1]=f_naranja[2][0][1]   #16
+    f_naranja_ur[2][2]=f_naranja[2][0][2]   #17
+    print("Cara naranja: ", f_naranja_ur)
+    f_verde_ur=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_ur[0][0]=f_naranja[0][0][0]   #27
+    f_verde_ur[0][1]=f_naranja[0][0][1]   #28
+    f_verde_ur[0][2]=f_naranja[0][0][2]   #29
+    f_verde_ur[1][0]=f_verde[1][0][0]   #39
+    f_verde_ur[1][1]=f_verde[1][0][1]   #40
+    f_verde_ur[1][2]=f_verde[1][0][2]   #41
+    f_verde_ur[2][0]=f_verde[2][0][0]   #42
+    f_verde_ur[2][1]=f_verde[2][0][1]   #43
+    f_verde_ur[2][2]=f_verde[2][0][2]   #44
+    print("Cara verde: ",f_verde_ur)
+    f_rojo_ur=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_ur[0][0]=f_verde[0][0][0]   #27
+    f_rojo_ur[0][1]=f_verde[0][0][1]   #28
+    f_rojo_ur[0][2]=f_verde[0][0][2]   #29
+    f_rojo_ur[1][0]=f_rojo[1][0][0]   #39
+    f_rojo_ur[1][1]=f_rojo[1][0][1]   #40
+    f_rojo_ur[1][2]=f_rojo[1][0][2]   #41
+    f_rojo_ur[2][0]=f_rojo[2][0][0]   #42
+    f_rojo_ur[2][1]=f_rojo[2][0][1]   #43
+    f_rojo_ur[2][2]=f_rojo[2][0][2]   #44
+    print("Cara roja: ",f_rojo_ur)
+    print("Cara amarilla: ",f_amarillo)
+
+    f_blanco[0][0][0] = f_blanco_ur[0][0]           #El nuevo valor de la coordenada de esta posición es la que queda como resultado después de hacer el movimiento anterior
+    f_blanco[0][0][1] = f_blanco_ur[0][1]
+    f_blanco[0][0][2] = f_blanco_ur[0][2]
+    f_blanco[1][0][0] = f_blanco_ur[1][0]
+    f_blanco[1][0][1] = f_blanco_ur[1][1]
+    f_blanco[1][0][2] = f_blanco_ur[1][2]
+    f_blanco[2][0][0] = f_blanco_ur[2][0]
+    f_blanco[2][0][1] = f_blanco_ur[2][1]
+    f_blanco[2][0][2] = f_blanco_ur[2][2]########
+    f_azul[0][0][0] = f_azul_ur[0][0]
+    f_azul[0][0][1] = f_azul_ur[0][1]
+    f_azul[0][0][2] = f_azul_ur[0][2]
+    f_azul[1][0][0] = f_azul_ur[1][0]
+    f_azul[1][0][1] = f_azul_ur[1][1]
+    f_azul[1][0][2] = f_azul_ur[1][2]
+    f_azul[2][0][0] = f_azul_ur[2][0]
+    f_azul[2][0][1] = f_azul_ur[2][1]
+    f_azul[2][0][2] = f_azul_ur[2][2]########
+    f_naranja[0][0][0] = f_naranja_ur[0][0]
+    f_naranja[0][0][1] = f_naranja_ur[0][1]
+    f_naranja[0][0][2] = f_naranja_ur[0][2]
+    f_naranja[1][0][0] = f_naranja_ur[1][0]
+    f_naranja[1][0][1] = f_naranja_ur[1][1]
+    f_naranja[1][0][2] = f_naranja_ur[1][2]
+    f_naranja[2][0][0] = f_naranja_ur[2][0]
+    f_naranja[2][0][1] = f_naranja_ur[2][1]
+    f_naranja[2][0][2] = f_naranja_ur[2][2]########
+    f_verde[0][0][0] = f_verde_ur[0][0]
+    f_verde[0][0][1] = f_verde_ur[0][1]
+    f_verde[0][0][2] = f_verde_ur[0][2]
+    f_verde[1][0][0] = f_verde_ur[1][0]
+    f_verde[1][0][1] = f_verde_ur[1][1]
+    f_verde[1][0][2] = f_verde_ur[1][2]
+    f_verde[2][0][0] = f_verde_ur[2][0]
+    f_verde[2][0][1] = f_verde_ur[2][1]
+    f_verde[2][0][2] = f_verde_ur[2][2]########
+    f_rojo[0][0][0] = f_rojo_ur[0][0]
+    f_rojo[0][0][1] = f_rojo_ur[0][1]
+    f_rojo[0][0][2] = f_rojo_ur[0][2]
+    f_rojo[1][0][0] = f_rojo_ur[1][0]
+    f_rojo[1][0][1] = f_rojo_ur[1][1]
+    f_rojo[1][0][2] = f_rojo_ur[1][2]
+    f_rojo[2][0][0] = f_rojo_ur[2][0]
+    f_rojo[2][0][1] = f_rojo_ur[2][1]
+    f_rojo[2][0][2] = f_rojo_ur[2][2]
+
+'''MOVER ARRIBA A LA IZQUIERDA'''
+
+def arriba_izquierda (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_ul=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_ul[0][0]=f_blanco[2][0][0]   #6
+    f_blanco_ul[0][1]=f_blanco[1][0][0]   #3
+    f_blanco_ul[0][2]=f_blanco[0][0][0]   #0
+    f_blanco_ul[1][0]=f_blanco[2][0][1]   #7
+    f_blanco_ul[1][1]=f_blanco[1][0][1]   #4
+    f_blanco_ul[1][2]=f_blanco[0][0][1]   #1
+    f_blanco_ul[2][0]=f_blanco[2][0][2]   #8
+    f_blanco_ul[2][1]=f_blanco[1][0][2]   #5
+    f_blanco_ul[2][2]=f_blanco[0][0][2]   #2
+    print("Cara blanca: ",f_blanco_ul)
+    f_azul_ul=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_azul_ul[0][0]=f_naranja[0][0][0]     #36
+    f_azul_ul[0][1]=f_naranja[0][0][1]     #37
+    f_azul_ul[0][2]=f_naranja[0][0][2]     #38
+    f_azul_ul[1][0]=f_azul[1][0][0]        #12
+    f_azul_ul[1][1]=f_azul[1][0][1]        #13
+    f_azul_ul[1][2]=f_azul[1][0][2]        #14
+    f_azul_ul[2][0]=f_azul[2][0][0]        #15
+    f_azul_ul[2][1]=f_azul[2][0][1]        #16
+    f_azul_ul[2][2]=f_azul[2][0][2]        #17
+    print("Cara azul: ", f_azul_ul)
+    f_naranja_ul=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_ul[0][0]=f_verde[0][0][0]     #27
+    f_naranja_ul[0][1]=f_verde[0][0][1]     #28
+    f_naranja_ul[0][2]=f_verde[0][0][2]     #29
+    f_naranja_ul[1][0]=f_naranja[1][0][0]   #21
+    f_naranja_ul[1][1]=f_naranja[1][0][1]   #22
+    f_naranja_ul[1][2]=f_naranja[1][0][2]   #23
+    f_naranja_ul[2][0]=f_naranja[2][0][0]   #24
+    f_naranja_ul[2][1]=f_naranja[2][0][1]   #25
+    f_naranja_ul[2][2]=f_naranja[2][0][2]   #26
+    print("Cara naranja: ", f_naranja_ul)
+    f_verde_ul=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_ul[0][0]=f_rojo[0][0][0]   #36
+    f_verde_ul[0][1]=f_rojo[0][0][1]   #37
+    f_verde_ul[0][2]=f_rojo[0][0][2]   #38
+    f_verde_ul[1][0]=f_verde[1][0][0]   #30
+    f_verde_ul[1][1]=f_verde[1][0][1]   #31
+    f_verde_ul[1][2]=f_verde[1][0][2]   #32
+    f_verde_ul[2][0]=f_verde[2][0][0]   #33
+    f_verde_ul[2][1]=f_verde[2][0][1]   #34
+    f_verde_ul[2][2]=f_verde[2][0][2]   #35
+    print("Cara verde: ",f_verde_ul)
+    f_rojo_ul=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_ul[0][0]=f_azul[0][0][0]   #27
+    f_rojo_ul[0][1]=f_azul[0][0][1]   #28
+    f_rojo_ul[0][2]=f_azul[0][0][2]   #29
+    f_rojo_ul[1][0]=f_rojo[1][0][0]   #39
+    f_rojo_ul[1][1]=f_rojo[1][0][1]   #40
+    f_rojo_ul[1][2]=f_rojo[1][0][2]   #41
+    f_rojo_ul[2][0]=f_rojo[2][0][0]   #42
+    f_rojo_ul[2][1]=f_rojo[2][0][1]   #43
+    f_rojo_ul[2][2]=f_rojo[2][0][2]   #44
+    print("Cara roja: ",f_rojo_ul)
+    print("Cara amarilla: ",f_amarillo)
+
+    f_blanco[0][0][0] = f_blanco_ul[0][0]
+    f_blanco[0][0][1] = f_blanco_ul[0][1]
+    f_blanco[0][0][2] = f_blanco_ul[0][2]
+    f_blanco[1][0][0] = f_blanco_ul[1][0]
+    f_blanco[1][0][1] = f_blanco_ul[1][1]
+    f_blanco[1][0][2] = f_blanco_ul[1][2]
+    f_blanco[2][0][0] = f_blanco_ul[2][0]
+    f_blanco[2][0][1] = f_blanco_ul[2][1]
+    f_blanco[2][0][2] = f_blanco_ul[2][2]########
+    f_azul[0][0][0] = f_azul_ul[0][0]
+    f_azul[0][0][1] = f_azul_ul[0][1]
+    f_azul[0][0][2] = f_azul_ul[0][2]
+    f_azul[1][0][0] = f_azul_ul[1][0]
+    f_azul[1][0][1] = f_azul_ul[1][1]
+    f_azul[1][0][2] = f_azul_ul[1][2]
+    f_azul[2][0][0] = f_azul_ul[2][0]
+    f_azul[2][0][1] = f_azul_ul[2][1]
+    f_azul[2][0][2] = f_azul_ul[2][2]########
+    f_naranja[0][0][0] = f_naranja_ul[0][0]
+    f_naranja[0][0][1] = f_naranja_ul[0][1]
+    f_naranja[0][0][2] = f_naranja_ul[0][2]
+    f_naranja[1][0][0] = f_naranja_ul[1][0]
+    f_naranja[1][0][1] = f_naranja_ul[1][1]
+    f_naranja[1][0][2] = f_naranja_ul[1][2]
+    f_naranja[2][0][0] = f_naranja_ul[2][0]
+    f_naranja[2][0][1] = f_naranja_ul[2][1]
+    f_naranja[2][0][2] = f_naranja_ul[2][2]########
+    f_verde[0][0][0] = f_verde_ul[0][0]
+    f_verde[0][0][1] = f_verde_ul[0][1]
+    f_verde[0][0][2] = f_verde_ul[0][2]
+    f_verde[1][0][0] = f_verde_ul[1][0]
+    f_verde[1][0][1] = f_verde_ul[1][1]
+    f_verde[1][0][2] = f_verde_ul[1][2]
+    f_verde[2][0][0] = f_verde_ul[2][0]
+    f_verde[2][0][1] = f_verde_ul[2][1]
+    f_verde[2][0][2] = f_verde_ul[2][2]########
+    f_rojo[0][0][0] = f_rojo_ul[0][0]
+    f_rojo[0][0][1] = f_rojo_ul[0][1]
+    f_rojo[0][0][2] = f_rojo_ul[0][2]
+    f_rojo[1][0][0] = f_rojo_ul[1][0]
+    f_rojo[1][0][1] = f_rojo_ul[1][1]
+    f_rojo[1][0][2] = f_rojo_ul[1][2]
+    f_rojo[2][0][0] = f_rojo_ul[2][0]
+    f_rojo[2][0][1] = f_rojo_ul[2][1]
+    f_rojo[2][0][2] = f_rojo_ul[2][2]
+
+'''MOVER ABAJO A LA DERECHA'''
+
+def abajo_derecha (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    print("Cara blanca: ",f_blanco)
+    f_azul_dr=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_azul_dr[0][0]=f_azul[0][0][0]        #9
+    f_azul_dr[0][1]=f_azul[0][0][1]        #10
+    f_azul_dr[0][2]=f_azul[0][0][2]        #11
+    f_azul_dr[1][0]=f_azul[1][0][0]        #12
+    f_azul_dr[1][1]=f_azul[1][0][1]        #13
+    f_azul_dr[1][2]=f_azul[1][0][2]        #14
+    f_azul_dr[2][0]=f_rojo[2][0][0]        #42
+    f_azul_dr[2][1]=f_rojo[2][0][1]        #43
+    f_azul_dr[2][2]=f_rojo[2][0][2]        #44
+    print("Cara azul: ", f_azul_dr)
+    f_naranja_dr=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_dr[0][0]=f_naranja[0][0][0]    #18
+    f_naranja_dr[0][1]=f_naranja[0][0][1]    #19
+    f_naranja_dr[0][2]=f_naranja[0][0][2]    #20
+    f_naranja_dr[1][0]=f_naranja[1][0][0]    #21
+    f_naranja_dr[1][1]=f_naranja[1][0][1]    #22
+    f_naranja_dr[1][2]=f_naranja[1][0][2]    #23
+    f_naranja_dr[2][0]=f_azul[2][0][0]       #15
+    f_naranja_dr[2][1]=f_azul[2][0][1]       #16
+    f_naranja_dr[2][2]=f_azul[2][0][2]       #17
+    print("Cara naranja: ", f_naranja_dr)
+    f_verde_dr=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_dr[0][0]=f_verde[0][0][0]      #27
+    f_verde_dr[0][1]=f_verde[0][0][1]      #28
+    f_verde_dr[0][2]=f_verde[0][0][2]      #29
+    f_verde_dr[1][0]=f_verde[1][0][0]      #30
+    f_verde_dr[1][1]=f_verde[1][0][1]      #31
+    f_verde_dr[1][2]=f_verde[1][0][2]      #32
+    f_verde_dr[2][0]=f_naranja[2][0][0]    #24
+    f_verde_dr[2][1]=f_naranja[2][0][1]    #25
+    f_verde_dr[2][2]=f_naranja[2][0][2]    #26
+    print("Cara verde: ",f_verde_dr)
+    f_rojo_dr=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_dr[0][0]=f_rojo[0][0][0]    #36
+    f_rojo_dr[0][1]=f_rojo[0][0][1]    #37
+    f_rojo_dr[0][2]=f_rojo[0][0][2]    #38
+    f_rojo_dr[1][0]=f_rojo[1][0][0]    #39
+    f_rojo_dr[1][1]=f_rojo[1][0][1]    #40
+    f_rojo_dr[1][2]=f_rojo[1][0][2]    #41
+    f_rojo_dr[2][0]=f_verde[2][0][0]   #33
+    f_rojo_dr[2][1]=f_verde[2][0][1]   #34
+    f_rojo_dr[2][2]=f_verde[2][0][2]   #35
+    print("Cara roja: ",f_rojo_dr)
+    f_amarillo_dr=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_dr[0][0]=f_amarillo[2][0][0]   #51
+    f_amarillo_dr[0][1]=f_amarillo[1][0][0]   #48
+    f_amarillo_dr[0][2]=f_amarillo[0][0][0]   #45
+    f_amarillo_dr[1][0]=f_amarillo[2][0][1]   #52
+    f_amarillo_dr[1][1]=f_amarillo[1][0][1]   #49
+    f_amarillo_dr[1][2]=f_amarillo[0][0][1]   #46
+    f_amarillo_dr[2][0]=f_amarillo[2][0][2]   #53
+    f_amarillo_dr[2][1]=f_amarillo[1][0][2]   #50
+    f_amarillo_dr[2][2]=f_amarillo[0][0][2]   #47
+    print("Cara amarilla: ",f_amarillo_dr)
+
+    f_amarillo[0][0][0] = f_amarillo_dr[0][0]
+    f_amarillo[0][0][1] = f_amarillo_dr[0][1]
+    f_amarillo[0][0][2] = f_amarillo_dr[0][2]
+    f_amarillo[1][0][0] = f_amarillo_dr[1][0]
+    f_amarillo[1][0][1] = f_amarillo_dr[1][1]
+    f_amarillo[1][0][2] = f_amarillo_dr[1][2]
+    f_amarillo[2][0][0] = f_amarillo_dr[2][0]
+    f_amarillo[2][0][1] = f_amarillo_dr[2][1]
+    f_amarillo[2][0][2] = f_amarillo_dr[2][2]########
+    f_azul[0][0][0] = f_azul_dr[0][0]
+    f_azul[0][0][1] = f_azul_dr[0][1]
+    f_azul[0][0][2] = f_azul_dr[0][2]
+    f_azul[1][0][0] = f_azul_dr[1][0]
+    f_azul[1][0][1] = f_azul_dr[1][1]
+    f_azul[1][0][2] = f_azul_dr[1][2]
+    f_azul[2][0][0] = f_azul_dr[2][0]
+    f_azul[2][0][1] = f_azul_dr[2][1]
+    f_azul[2][0][2] = f_azul_dr[2][2]########
+    f_naranja[0][0][0] = f_naranja_dr[0][0]
+    f_naranja[0][0][1] = f_naranja_dr[0][1]
+    f_naranja[0][0][2] = f_naranja_dr[0][2]
+    f_naranja[1][0][0] = f_naranja_dr[1][0]
+    f_naranja[1][0][1] = f_naranja_dr[1][1]
+    f_naranja[1][0][2] = f_naranja_dr[1][2]
+    f_naranja[2][0][0] = f_naranja_dr[2][0]
+    f_naranja[2][0][1] = f_naranja_dr[2][1]
+    f_naranja[2][0][2] = f_naranja_dr[2][2]########
+    f_verde[0][0][0] = f_verde_dr[0][0]
+    f_verde[0][0][1] = f_verde_dr[0][1]
+    f_verde[0][0][2] = f_verde_dr[0][2]
+    f_verde[1][0][0] = f_verde_dr[1][0]
+    f_verde[1][0][1] = f_verde_dr[1][1]
+    f_verde[1][0][2] = f_verde_dr[1][2]
+    f_verde[2][0][0] = f_verde_dr[2][0]
+    f_verde[2][0][1] = f_verde_dr[2][1]
+    f_verde[2][0][2] = f_verde_dr[2][2]########
+    f_rojo[0][0][0] = f_rojo_dr[0][0]
+    f_rojo[0][0][1] = f_rojo_dr[0][1]
+    f_rojo[0][0][2] = f_rojo_dr[0][2]
+    f_rojo[1][0][0] = f_rojo_dr[1][0]
+    f_rojo[1][0][1] = f_rojo_dr[1][1]
+    f_rojo[1][0][2] = f_rojo_dr[1][2]
+    f_rojo[2][0][0] = f_rojo_dr[2][0]
+    f_rojo[2][0][1] = f_rojo_dr[2][1]
+    f_rojo[2][0][2] = f_rojo_dr[2][2]
+
+'''MOVER ABAJO A LA IZQUIERDA'''
+
+def abajo_izquierda (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    print("Cara blanca: ",f_blanco)
+    f_azul_dl=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_azul_dl[0][0]=f_azul[0][0][0]            #9
+    f_azul_dl[0][1]=f_azul[0][0][1]            #10
+    f_azul_dl[0][2]=f_azul[0][0][2]            #11
+    f_azul_dl[1][0]=f_azul[1][0][0]            #12
+    f_azul_dl[1][1]=f_azul[1][0][1]            #13
+    f_azul_dl[1][2]=f_azul[1][0][2]            #14
+    f_azul_dl[2][0]=f_naranja[2][0][0]        #42
+    f_azul_dl[2][1]=f_naranja[2][0][1]        #43
+    f_azul_dl[2][2]=f_naranja[2][0][2]        #44
+    print("Cara azul: ", f_azul_dl)
+    f_naranja_dl=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_dl[0][0]=f_naranja[0][0][0]      #18
+    f_naranja_dl[0][1]=f_naranja[0][0][1]      #19
+    f_naranja_dl[0][2]=f_naranja[0][0][2]      #20
+    f_naranja_dl[1][0]=f_naranja[1][0][0]      #21
+    f_naranja_dl[1][1]=f_naranja[1][0][1]      #22
+    f_naranja_dl[1][2]=f_naranja[1][0][2]      #23
+    f_naranja_dl[2][0]=f_verde[2][0][0]        #15
+    f_naranja_dl[2][1]=f_verde[2][0][1]        #16
+    f_naranja_dl[2][2]=f_verde[2][0][2]        #17
+    print("Cara naranja: ", f_naranja_dl)
+    f_verde_dl=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_dl[0][0]=f_verde[0][0][0]      #27
+    f_verde_dl[0][1]=f_verde[0][0][1]      #28
+    f_verde_dl[0][2]=f_verde[0][0][2]      #29
+    f_verde_dl[1][0]=f_verde[1][0][0]      #30
+    f_verde_dl[1][1]=f_verde[1][0][1]      #31
+    f_verde_dl[1][2]=f_verde[1][0][2]      #32
+    f_verde_dl[2][0]=f_rojo[2][0][0]       #24
+    f_verde_dl[2][1]=f_rojo[2][0][1]       #25
+    f_verde_dl[2][2]=f_rojo[2][0][2]       #26
+    print("Cara verde: ",f_verde_dl)
+    f_rojo_dl=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_dl[0][0]=f_rojo[0][0][0]    #36
+    f_rojo_dl[0][1]=f_rojo[0][0][1]    #37
+    f_rojo_dl[0][2]=f_rojo[0][0][2]    #38
+    f_rojo_dl[1][0]=f_rojo[1][0][0]    #39
+    f_rojo_dl[1][1]=f_rojo[1][0][1]    #40
+    f_rojo_dl[1][2]=f_rojo[1][0][2]    #41
+    f_rojo_dl[2][0]=f_azul[2][0][0]    #33
+    f_rojo_dl[2][1]=f_azul[2][0][1]    #34
+    f_rojo_dl[2][2]=f_azul[2][0][2]    #35
+    print("Cara roja: ",f_rojo_dl)
+    f_amarillo_dl=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_dl[0][0]=f_amarillo[0][0][2]   #47
+    f_amarillo_dl[0][1]=f_amarillo[1][0][2]   #50
+    f_amarillo_dl[0][2]=f_amarillo[2][0][2]   #53
+    f_amarillo_dl[1][0]=f_amarillo[0][0][1]   #46
+    f_amarillo_dl[1][1]=f_amarillo[1][0][1]   #49
+    f_amarillo_dl[1][2]=f_amarillo[2][0][1]   #52
+    f_amarillo_dl[2][0]=f_amarillo[0][0][0]   #45
+    f_amarillo_dl[2][1]=f_amarillo[1][0][0]   #48
+    f_amarillo_dl[2][2]=f_amarillo[2][0][0]   #51
+    print("Cara amarilla: ",f_amarillo_dl)
+
+    f_amarillo[0][0][0] = f_amarillo_dl[0][0]
+    f_amarillo[0][0][1] = f_amarillo_dl[0][1]
+    f_amarillo[0][0][2] = f_amarillo_dl[0][2]
+    f_amarillo[1][0][0] = f_amarillo_dl[1][0]
+    f_amarillo[1][0][1] = f_amarillo_dl[1][1]
+    f_amarillo[1][0][2] = f_amarillo_dl[1][2]
+    f_amarillo[2][0][0] = f_amarillo_dl[2][0]
+    f_amarillo[2][0][1] = f_amarillo_dl[2][1]
+    f_amarillo[2][0][2] = f_amarillo_dl[2][2]  ########
+    f_azul[0][0][0] = f_azul_dl[0][0]
+    f_azul[0][0][1] = f_azul_dl[0][1]
+    f_azul[0][0][2] = f_azul_dl[0][2]
+    f_azul[1][0][0] = f_azul_dl[1][0]
+    f_azul[1][0][1] = f_azul_dl[1][1]
+    f_azul[1][0][2] = f_azul_dl[1][2]
+    f_azul[2][0][0] = f_azul_dl[2][0]
+    f_azul[2][0][1] = f_azul_dl[2][1]
+    f_azul[2][0][2] = f_azul_dl[2][2]########
+    f_naranja[0][0][0] = f_naranja_dl[0][0]
+    f_naranja[0][0][1] = f_naranja_dl[0][1]
+    f_naranja[0][0][2] = f_naranja_dl[0][2]
+    f_naranja[1][0][0] = f_naranja_dl[1][0]
+    f_naranja[1][0][1] = f_naranja_dl[1][1]
+    f_naranja[1][0][2] = f_naranja_dl[1][2]
+    f_naranja[2][0][0] = f_naranja_dl[2][0]
+    f_naranja[2][0][1] = f_naranja_dl[2][1]
+    f_naranja[2][0][2] = f_naranja_dl[2][2]########
+    f_verde[0][0][0] = f_verde_dl[0][0]
+    f_verde[0][0][1] = f_verde_dl[0][1]
+    f_verde[0][0][2] = f_verde_dl[0][2]
+    f_verde[1][0][0] = f_verde_dl[1][0]
+    f_verde[1][0][1] = f_verde_dl[1][1]
+    f_verde[1][0][2] = f_verde_dl[1][2]
+    f_verde[2][0][0] = f_verde_dl[2][0]
+    f_verde[2][0][1] = f_verde_dl[2][1]
+    f_verde[2][0][2] = f_verde_dl[2][2]########
+    f_rojo[0][0][0] = f_rojo_dl[0][0]
+    f_rojo[0][0][1] = f_rojo_dl[0][1]
+    f_rojo[0][0][2] = f_rojo_dl[0][2]
+    f_rojo[1][0][0] = f_rojo_dl[1][0]
+    f_rojo[1][0][1] = f_rojo_dl[1][1]
+    f_rojo[1][0][2] = f_rojo_dl[1][2]
+    f_rojo[2][0][0] = f_rojo_dl[2][0]
+    f_rojo[2][0][1] = f_rojo_dl[2][1]
+    f_rojo[2][0][2] = f_rojo_dl[2][2]
+
+'''MOVER A LA IZQUIERDA ARRIBA'''
+
+def izquierda_arriba (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_lu=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_lu[0][0]=f_azul[0][0] [0]        #9
+    f_blanco_lu[0][1]=f_blanco[0][0] [1]      #1
+    f_blanco_lu[0][2]=f_blanco[0][0] [2]      #2
+    f_blanco_lu[1][0]=f_azul[1][0] [0]        #12
+    f_blanco_lu[1][1]=f_blanco[1][0] [1]      #4
+    f_blanco_lu[1][2]=f_blanco[1][0] [2]      #5
+    f_blanco_lu[2][0]=f_azul[2][0] [0]        #15
+    f_blanco_lu[2][1]=f_blanco[2][0] [1]      #7
+    f_blanco_lu[2][2]=f_blanco[2][0] [2]      #8
+    print("Cara blanca: ",f_blanco_lu)
+    f_azul_lu=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_azul_lu[0][0]=f_amarillo[0][0] [0]    #45
+    f_azul_lu[0][1]=f_azul[0][0] [1]        #10
+    f_azul_lu[0][2]=f_azul[0][0] [2]        #11
+    f_azul_lu[1][0]=f_amarillo[1][0] [0]    #48
+    f_azul_lu[1][1]=f_azul[1][0] [1]        #13
+    f_azul_lu[1][2]=f_azul[1][0] [2]        #14
+    f_azul_lu[2][0]=f_amarillo[2][0] [0]    #51
+    f_azul_lu[2][1]=f_azul[2][0] [1]        #16
+    f_azul_lu[2][2]=f_azul[2][0] [2]        #17
+    print("Cara azul: ", f_azul_lu)
+    print("Cara naranja: ", f_naranja)
+    f_verde_lu=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_lu[0][0]=f_verde[0][0] [0]      #27
+    f_verde_lu[0][1]=f_verde[0][0] [1]      #28
+    f_verde_lu[0][2]=f_blanco[2][0] [0]     #6
+    f_verde_lu[1][0]=f_verde[1][0] [0]      #30
+    f_verde_lu[1][1]=f_verde[1][0] [1]      #31
+    f_verde_lu[1][2]=f_blanco[1][0] [0]     #3
+    f_verde_lu[2][0]=f_verde[2][0] [0]      #33
+    f_verde_lu[2][1]=f_verde[2][0] [1]      #34
+    f_verde_lu[2][2]=f_blanco[0][0] [0]     #0
+    print("Cara verde: ",f_verde_lu)
+    f_rojo_lu=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_lu[0][0]=f_rojo[0][0] [2]    #38
+    f_rojo_lu[0][1]=f_rojo[1][0] [2]    #41
+    f_rojo_lu[0][2]=f_rojo[2][0] [2]    #44
+    f_rojo_lu[1][0]=f_rojo[0][0] [1]    #37
+    f_rojo_lu[1][1]=f_rojo[1][0] [1]    #40
+    f_rojo_lu[1][2]=f_rojo[2][0] [1]    #43
+    f_rojo_lu[2][0]=f_rojo[0][0] [0]    #36
+    f_rojo_lu[2][1]=f_rojo[1][0] [0]    #39
+    f_rojo_lu[2][2]=f_rojo[2][0] [0]    #42
+    print("Cara roja: ",f_rojo_lu)
+    f_amarillo_lu=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_lu[0][0]=f_verde[2][0] [2]       #35
+    f_amarillo_lu[0][1]=f_amarillo[0][0] [1]    #46
+    f_amarillo_lu[0][2]=f_amarillo[0][0] [2]    #47
+    f_amarillo_lu[1][0]=f_verde[1][0] [2]       #32
+    f_amarillo_lu[1][1]=f_amarillo[1][0] [1]    #49
+    f_amarillo_lu[1][2]=f_amarillo[1][0] [2]    #50
+    f_amarillo_lu[2][0]=f_verde[0][0] [2]       #29
+    f_amarillo_lu[2][1]=f_amarillo[2][0] [1]    #52
+    f_amarillo_lu[2][2]=f_amarillo[2][0] [2]    #53
+    print("Cara amarilla: ",f_amarillo_lu)
+
+    f_blanco[0][0] [0] = f_blanco_lu[0][0]
+    f_blanco[0][0] [1] = f_blanco_lu[0][1]
+    f_blanco[0][0] [2] = f_blanco_lu[0][2]
+    f_blanco[1][0] [0] = f_blanco_lu[1][0]
+    f_blanco[1][0] [1] = f_blanco_lu[1][1]
+    f_blanco[1][0] [2] = f_blanco_lu[1][2]
+    f_blanco[2][0] [0] = f_blanco_lu[2][0]
+    f_blanco[2][0] [1] = f_blanco_lu[2][1]
+    f_blanco[2][0] [2] = f_blanco_lu[2][2]########
+    f_azul[0][0] [0] = f_azul_lu[0][0]
+    f_azul[0][0] [1] = f_azul_lu[0][1]
+    f_azul[0][0] [2] = f_azul_lu[0][2]
+    f_azul[1][0] [0] = f_azul_lu[1][0]
+    f_azul[1][0] [1] = f_azul_lu[1][1]
+    f_azul[1][0] [2] = f_azul_lu[1][2]
+    f_azul[2][0] [0] = f_azul_lu[2][0]
+    f_azul[2][0] [1] = f_azul_lu[2][1]
+    f_azul[2][0] [2] = f_azul_lu[2][2]########
+    f_amarillo[0][0] [0] = f_amarillo_lu[0][0]
+    f_amarillo[0][0] [1] = f_amarillo_lu[0][1]
+    f_amarillo[0][0] [2] = f_amarillo_lu[0][2]
+    f_amarillo[1][0] [0] = f_amarillo_lu[1][0]
+    f_amarillo[1][0] [1] = f_amarillo_lu[1][1]
+    f_amarillo[1][0] [2] = f_amarillo_lu[1][2]
+    f_amarillo[2][0] [0] = f_amarillo_lu[2][0]
+    f_amarillo[2][0] [1] = f_amarillo_lu[2][1]
+    f_amarillo[2][0] [2] = f_amarillo_lu[2][2]########
+    f_verde[0][0] [0] = f_verde_lu[0][0]
+    f_verde[0][0] [1] = f_verde_lu[0][1]
+    f_verde[0][0] [2] = f_verde_lu[0][2]
+    f_verde[1][0] [0] = f_verde_lu[1][0]
+    f_verde[1][0] [1] = f_verde_lu[1][1]
+    f_verde[1][0] [2] = f_verde_lu[1][2]
+    f_verde[2][0] [0] = f_verde_lu[2][0]
+    f_verde[2][0] [1] = f_verde_lu[2][1]
+    f_verde[2][0] [2] = f_verde_lu[2][2]########
+    f_rojo[0][0] [0] = f_rojo_lu[0][0]
+    f_rojo[0][0] [1] = f_rojo_lu[0][1]
+    f_rojo[0][0] [2] = f_rojo_lu[0][2]
+    f_rojo[1][0] [0] = f_rojo_lu[1][0]
+    f_rojo[1][0] [1] = f_rojo_lu[1][1]
+    f_rojo[1][0] [2] = f_rojo_lu[1][2]
+    f_rojo[2][0] [0] = f_rojo_lu[2][0]
+    f_rojo[2][0] [1] = f_rojo_lu[2][1]
+    f_rojo[2][0] [2] = f_rojo_lu[2][2]
+
+'''MOVER A LA IZQUIERDA ABAJO'''
+
+def izquierda_abajo (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_ld=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_ld[0][0]=f_verde[2][0] [2]    #35
+    f_blanco_ld[0][1]=f_blanco[0][0] [1]   #1
+    f_blanco_ld[0][2]=f_blanco[0][0] [2]   #2
+    f_blanco_ld[1][0]=f_verde[1][0] [2]    #32
+    f_blanco_ld[1][1]=f_blanco[1][0] [1]   #4
+    f_blanco_ld[1][2]=f_blanco[1][0] [2]   #5
+    f_blanco_ld[2][0]=f_verde[0][0] [2]    #29
+    f_blanco_ld[2][1]=f_blanco[2][0] [1]   #7
+    f_blanco_ld[2][2]=f_blanco[2][0] [2]   #8
+    print("Cara blanca: ",f_blanco_ld)
+    f_azul_ld=[[[],[],[]],[[],[],[]],[[],[],[]]] ########
+    f_azul_ld[0][0]=f_blanco[0][0] [0]   #0
+    f_azul_ld[0][1]=f_azul[0][0] [1]     #10
+    f_azul_ld[0][2]=f_azul[0][0] [2]     #11
+    f_azul_ld[1][0]=f_blanco[1][0] [0]   #3
+    f_azul_ld[1][1]=f_azul[1][0] [1]     #13
+    f_azul_ld[1][2]=f_azul[1][0] [2]     #14
+    f_azul_ld[2][0]=f_blanco[2][0] [0]   #6
+    f_azul_ld[2][1]=f_azul[2][0] [1]     #16
+    f_azul_ld[2][2]=f_azul[2][0] [2]     #17
+    print("Cara azul: ", f_azul_ld)
+    print("Cara naranja: ", f_naranja)
+    f_verde_ld=[[[],[],[]],[[],[],[]],[[],[],[]]] ########
+    f_verde_ld[0][0]=f_verde[0][0] [0]      #27
+    f_verde_ld[0][1]=f_verde[0][0] [1]      #28
+    f_verde_ld[0][2]=f_amarillo[2][0] [0]   #51
+    f_verde_ld[1][0]=f_verde[1][0] [0]      #30
+    f_verde_ld[1][1]=f_verde[1][0] [1]      #31
+    f_verde_ld[1][2]=f_amarillo[1][0] [0]   #48
+    f_verde_ld[2][0]=f_verde[2][0] [0]      #33
+    f_verde_ld[2][1]=f_verde[2][0] [1]      #34
+    f_verde_ld[2][2]=f_amarillo[0][0] [0]   #45
+    print("Cara verde: ",f_verde_ld)
+    f_rojo_ld=[[[],[],[]],[[],[],[]],[[],[],[]]] ########
+    f_rojo_ld[0][0]=f_rojo[2][0] [0]    #42
+    f_rojo_ld[0][1]=f_rojo[1][0] [0]    #39
+    f_rojo_ld[0][2]=f_rojo[0][0] [0]    #36
+    f_rojo_ld[1][0]=f_rojo[2][0] [1]    #43
+    f_rojo_ld[1][1]=f_rojo[1][0] [1]    #40
+    f_rojo_ld[1][2]=f_rojo[0][0] [1]    #37
+    f_rojo_ld[2][0]=f_rojo[2][0] [2]    #44
+    f_rojo_ld[2][1]=f_rojo[1][0] [2]    #41
+    f_rojo_ld[2][2]=f_rojo[0][0] [2]    #38
+    print("Cara roja: ",f_rojo_ld)
+    f_amarillo_ld=[[[],[],[]],[[],[],[]],[[],[],[]]] ########
+    f_amarillo_ld[0][0]=f_azul[0][0] [0]        #9
+    f_amarillo_ld[0][1]=f_amarillo[0][0] [1]    #46
+    f_amarillo_ld[0][2]=f_amarillo[0][0] [2]    #47
+    f_amarillo_ld[1][0]=f_azul[1][0] [0]        #12
+    f_amarillo_ld[1][1]=f_amarillo[1][0] [1]    #49
+    f_amarillo_ld[1][2]=f_amarillo[1][0] [2]    #50
+    f_amarillo_ld[2][0]=f_azul[2][0] [0]        #15
+    f_amarillo_ld[2][1]=f_amarillo[2][0] [1]    #52
+    f_amarillo_ld[2][2]=f_amarillo[2][0] [2]    #53
+    print("Cara amarilla: ",f_amarillo_ld)
+
+    f_blanco[0][0] [0] = f_blanco_ld[0][0]
+    f_blanco[0][0] [1] = f_blanco_ld[0][1]
+    f_blanco[0][0] [2] = f_blanco_ld[0][2]
+    f_blanco[1][0] [0] = f_blanco_ld[1][0]
+    f_blanco[1][0] [1] = f_blanco_ld[1][1]
+    f_blanco[1][0] [2] = f_blanco_ld[1][2]
+    f_blanco[2][0] [0] = f_blanco_ld[2][0]
+    f_blanco[2][0] [1] = f_blanco_ld[2][1]
+    f_blanco[2][0] [2] = f_blanco_ld[2][2]  ########
+    f_azul[0][0] [0] = f_azul_ld[0][0]
+    f_azul[0][0] [1] = f_azul_ld[0][1]
+    f_azul[0][0] [2] = f_azul_ld[0][2]
+    f_azul[1][0] [0] = f_azul_ld[1][0]
+    f_azul[1][0] [1] = f_azul_ld[1][1]
+    f_azul[1][0] [2] = f_azul_ld[1][2]
+    f_azul[2][0] [0] = f_azul_ld[2][0]
+    f_azul[2][0] [1] = f_azul_ld[2][1]
+    f_azul[2][0] [2] = f_azul_ld[2][2]  ########
+    f_amarillo[0][0] [0] = f_amarillo_ld[0][0]
+    f_amarillo[0][0] [1] = f_amarillo_ld[0][1]
+    f_amarillo[0][0] [2] = f_amarillo_ld[0][2]
+    f_amarillo[1][0] [0] = f_amarillo_ld[1][0]
+    f_amarillo[1][0] [1] = f_amarillo_ld[1][1]
+    f_amarillo[1][0] [2] = f_amarillo_ld[1][2]
+    f_amarillo[2][0] [0] = f_amarillo_ld[2][0]
+    f_amarillo[2][0] [1] = f_amarillo_ld[2][1]
+    f_amarillo[2][0] [2] = f_amarillo_ld[2][2]  ########
+    f_verde[0][0] [0] = f_verde_ld[0][0]
+    f_verde[0][0] [1] = f_verde_ld[0][1]
+    f_verde[0][0] [2] = f_verde_ld[0][2]
+    f_verde[1][0] [0] = f_verde_ld[1][0]
+    f_verde[1][0] [1] = f_verde_ld[1][1]
+    f_verde[1][0] [2] = f_verde_ld[1][2]
+    f_verde[2][0] [0] = f_verde_ld[2][0]
+    f_verde[2][0] [1] = f_verde_ld[2][1]
+    f_verde[2][0] [2] = f_verde_ld[2][2]  ########
+    f_rojo[0][0] [0] = f_rojo_ld[0][0]
+    f_rojo[0][0] [1] = f_rojo_ld[0][1]
+    f_rojo[0][0] [2] = f_rojo_ld[0][2]
+    f_rojo[1][0] [0] = f_rojo_ld[1][0]
+    f_rojo[1][0] [1] = f_rojo_ld[1][1]
+    f_rojo[1][0] [2] = f_rojo_ld[1][2]
+    f_rojo[2][0] [0] = f_rojo_ld[2][0]
+    f_rojo[2][0] [1] = f_rojo_ld[2][1]
+    f_rojo[2][0] [2] = f_rojo_ld[2][2]
+
+'''MOVER A LA DERECHA ABRRIBA'''
+
+def derecha_arriba (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_ru=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_ru[0][0]=f_blanco[0][0] [0]    #0
+    f_blanco_ru[0][1]=f_blanco[0][0] [1]    #1
+    f_blanco_ru[0][2]=f_azul[0][0] [2]      #11
+    f_blanco_ru[1][0]=f_blanco[1][0] [0]    #3
+    f_blanco_ru[1][1]=f_blanco[1][0] [1]    #4
+    f_blanco_ru[1][2]=f_azul[1][0] [2]      #14
+    f_blanco_ru[2][0]=f_blanco[2][0] [0]    #6
+    f_blanco_ru[2][1]=f_blanco[2][0] [1]    #7
+    f_blanco_ru[2][2]=f_azul[2][0][2]      #17
+    print("Cara blanca: ",f_blanco_ru)
+    f_azul_ru=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_azul_ru[0][0]=f_azul[0][0] [0]    #9
+    f_azul_ru[0][1]=f_azul[0][0] [1]    #10
+    f_azul_ru[0][2]=f_amarillo[0][0] [2]#47
+    f_azul_ru[1][0]=f_azul[1][0] [0]    #12
+    f_azul_ru[1][1]=f_azul[1][0] [1]    #13
+    f_azul_ru[1][2]=f_amarillo[1][0] [2]#50
+    f_azul_ru[2][0]=f_azul[2][0] [0]    #15
+    f_azul_ru[2][1]=f_azul[2][0] [1]    #16
+    f_azul_ru[2][2]=f_amarillo[2][0] [2]#53
+    print("Cara azul: ", f_azul_ru)
+    f_naranja_ru=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_ru[0][0]=f_naranja[2][0] [0]    #24
+    f_naranja_ru[0][1]=f_naranja[1][0] [0]    #21
+    f_naranja_ru[0][2]=f_naranja[0][0] [0]    #18
+    f_naranja_ru[1][0]=f_naranja[2][0] [1]    #25
+    f_naranja_ru[1][1]=f_naranja[1][0] [1]    #22
+    f_naranja_ru[1][2]=f_naranja[0][0] [1]    #19
+    f_naranja_ru[2][0]=f_naranja[2][0] [2]    #26
+    f_naranja_ru[2][1]=f_naranja[1][0] [2]    #23
+    f_naranja_ru[2][2]=f_naranja[0][0] [2]    #20
+    print("Cara naranja: ", f_naranja_ru)
+    f_verde_ru=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_ru[0][0]=f_blanco[2][0] [2] #8
+    f_verde_ru[0][1]=f_verde[0][0] [1]  #28
+    f_verde_ru[0][2]=f_verde[0][0] [2]  #29
+    f_verde_ru[1][0]=f_blanco[1][0] [2] #5
+    f_verde_ru[1][1]=f_verde[1][0] [1]  #31
+    f_verde_ru[1][2]=f_verde[1][0] [2]  #32
+    f_verde_ru[2][0]=f_blanco[0][0] [2] #2
+    f_verde_ru[2][1]=f_verde[2][0] [1]  #34
+    f_verde_ru[2][2]=f_verde[2][0] [2]  #35
+    print("Cara verde: ",f_verde_ru)
+    print("Cara roja: ",f_rojo)
+    f_amarillo_ru=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_ru[0][0]=f_amarillo[0][0] [0]    #45
+    f_amarillo_ru[0][1]=f_amarillo[0][0] [1]    #46
+    f_amarillo_ru[0][2]=f_verde[2][0] [0]       #33
+    f_amarillo_ru[1][0]=f_amarillo[1][0] [0]    #48
+    f_amarillo_ru[1][1]=f_amarillo[1][0] [1]    #49
+    f_amarillo_ru[1][2]=f_verde[1][0] [0]       #30
+    f_amarillo_ru[2][0]=f_amarillo[2][0] [0]    #51
+    f_amarillo_ru[2][1]=f_amarillo[2][0] [1]    #52
+    f_amarillo_ru[2][2]=f_verde[0][0] [0]       #27
+    print("Cara amarilla: ",f_amarillo_ru)
+
+    f_blanco[0][0] [0] = f_blanco_ru[0][0]
+    f_blanco[0][0] [1] = f_blanco_ru[0][1]
+    f_blanco[0][0] [2] = f_blanco_ru[0][2]
+    f_blanco[1][0] [0] = f_blanco_ru[1][0]
+    f_blanco[1][0] [1] = f_blanco_ru[1][1]
+    f_blanco[1][0] [2] = f_blanco_ru[1][2]
+    f_blanco[2][0] [0] = f_blanco_ru[2][0]
+    f_blanco[2][0] [1] = f_blanco_ru[2][1]
+    f_blanco[2][0] [2] = f_blanco_ru[2][2]########
+    f_azul[0][0] [0] = f_azul_ru[0][0]
+    f_azul[0][0] [1] = f_azul_ru[0][1]
+    f_azul[0][0] [2] = f_azul_ru[0][2]
+    f_azul[1][0] [0] = f_azul_ru[1][0]
+    f_azul[1][0] [1] = f_azul_ru[1][1]
+    f_azul[1][0] [2] = f_azul_ru[1][2]
+    f_azul[2][0] [0] = f_azul_ru[2][0]
+    f_azul[2][0] [1] = f_azul_ru[2][1]
+    f_azul[2][0] [2] = f_azul_ru[2][2]########
+    f_naranja[0][0] [0] = f_naranja_ru[0][0]
+    f_naranja[0][0] [1] = f_naranja_ru[0][1]
+    f_naranja[0][0] [2] = f_naranja_ru[0][2]
+    f_naranja[1][0] [0] = f_naranja_ru[1][0]
+    f_naranja[1][0] [1] = f_naranja_ru[1][1]
+    f_naranja[1][0] [2] = f_naranja_ru[1][2]
+    f_naranja[2][0] [0] = f_naranja_ru[2][0]
+    f_naranja[2][0] [1] = f_naranja_ru[2][1]
+    f_naranja[2][0] [2] = f_naranja_ru[2][2]########
+    f_verde[0][0] [0] = f_verde_ru[0][0]
+    f_verde[0][0] [1] = f_verde_ru[0][1]
+    f_verde[0][0] [2] = f_verde_ru[0][2]
+    f_verde[1][0] [0] = f_verde_ru[1][0]
+    f_verde[1][0] [1] = f_verde_ru[1][1]
+    f_verde[1][0] [2] = f_verde_ru[1][2]
+    f_verde[2][0] [0] = f_verde_ru[2][0]
+    f_verde[2][0] [1] = f_verde_ru[2][1]
+    f_verde[2][0] [2] = f_verde_ru[2][2]########
+    f_amarillo[0][0] [0] = f_amarillo_ru[0][0]
+    f_amarillo[0][0] [1] = f_amarillo_ru[0][1]
+    f_amarillo[0][0] [2] = f_amarillo_ru[0][2]
+    f_amarillo[1][0] [0] = f_amarillo_ru[1][0]
+    f_amarillo[1][0] [1] = f_amarillo_ru[1][1]
+    f_amarillo[1][0] [2] = f_amarillo_ru[1][2]
+    f_amarillo[2][0] [0] = f_amarillo_ru[2][0]
+    f_amarillo[2][0] [1] = f_amarillo_ru[2][1]
+    f_amarillo[2][0] [2] = f_amarillo_ru[2][2]
+
+'''MOVER A LA DERECHA ABAJO'''
+
+def derecha_abajo (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_rd=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_rd[0][0]=f_blanco[0][0] [0]    #0
+    f_blanco_rd[0][1]=f_blanco[0][0] [1]    #1
+    f_blanco_rd[0][2]=f_verde[2][0] [0]     #33
+    f_blanco_rd[1][0]=f_blanco[1][0] [0]    #3
+    f_blanco_rd[1][1]=f_blanco[1][0] [1]    #4
+    f_blanco_rd[1][2]=f_verde[1][0] [0]     #30
+    f_blanco_rd[2][0]=f_blanco[2][0] [0]    #6
+    f_blanco_rd[2][1]=f_blanco[2][0] [1]    #7
+    f_blanco_rd[2][2]=f_verde[0][0] [0]     #27
+    print("Cara blanca: ",f_blanco_rd)
+    f_azul_rd=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_azul_rd[0][0]=f_azul[0][0] [0]    #9
+    f_azul_rd[0][1]=f_azul[0][0] [1]    #10
+    f_azul_rd[0][2]=f_blanco[0][0] [2]  #2
+    f_azul_rd[1][0]=f_azul[1][0] [0]    #12
+    f_azul_rd[1][1]=f_azul[1][0] [1]    #13
+    f_azul_rd[1][2]=f_blanco[1][0] [2]  #5
+    f_azul_rd[2][0]=f_azul[2][0] [0]    #15
+    f_azul_rd[2][1]=f_azul[2][0] [1]    #16
+    f_azul_rd[2][2]=f_blanco[2][0] [2]  #8
+    print("Cara azul: ", f_azul_rd)
+    f_naranja_rd=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_rd[0][0]=f_naranja[0][0] [2]    #20
+    f_naranja_rd[0][1]=f_naranja[1][0] [2]    #23
+    f_naranja_rd[0][2]=f_naranja[2][0] [2]    #26
+    f_naranja_rd[1][0]=f_naranja[0][0] [1]    #19
+    f_naranja_rd[1][1]=f_naranja[1][0] [1]    #22
+    f_naranja_rd[1][2]=f_naranja[2][0] [1]    #25
+    f_naranja_rd[2][0]=f_naranja[0][0] [0]    #18
+    f_naranja_rd[2][1]=f_naranja[1][0] [0]    #21
+    f_naranja_rd[2][2]=f_naranja[2][0] [0]    #24
+    print("Cara naranja: ", f_naranja_rd)
+    f_verde_rd=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_rd[0][0]=f_amarillo[2][0] [2] #53
+    f_verde_rd[0][1]=f_verde[0][0] [1]    #28
+    f_verde_rd[0][2]=f_verde[0][0] [2]    #29
+    f_verde_rd[1][0]=f_amarillo[1][0] [2] #50
+    f_verde_rd[1][1]=f_verde[1][0] [1]    #31
+    f_verde_rd[1][2]=f_verde[1][0] [2]    #32
+    f_verde_rd[2][0]=f_amarillo[0][0] [2] #47
+    f_verde_rd[2][1]=f_verde[2][0] [1]    #34
+    f_verde_rd[2][2]=f_verde[2][0] [2]    #35
+    print("Cara verde: ",f_verde_rd)
+    print("Cara roja: ",f_rojo)
+    f_amarillo_rd=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_rd[0][0]=f_amarillo[0][0] [0]   #45
+    f_amarillo_rd[0][1]=f_amarillo[0][0] [1]   #46
+    f_amarillo_rd[0][2]=f_azul[0][0] [2]       #11
+    f_amarillo_rd[1][0]=f_amarillo[1][0] [0]   #48
+    f_amarillo_rd[1][1]=f_amarillo[1][0] [1]   #49
+    f_amarillo_rd[1][2]=f_azul[1][0] [2]       #14
+    f_amarillo_rd[2][0]=f_amarillo[2][0] [0]   #51
+    f_amarillo_rd[2][1]=f_amarillo[2][0] [1]   #52
+    f_amarillo_rd[2][2]=f_azul[2][0] [2]       #17
+    print("Cara amarilla: ",f_amarillo_rd)
+
+    f_blanco[0][0] [0] = f_blanco_rd[0][0]
+    f_blanco[0][0] [1] = f_blanco_rd[0][1]
+    f_blanco[0][0] [2] = f_blanco_rd[0][2]
+    f_blanco[1][0] [0] = f_blanco_rd[1][0]
+    f_blanco[1][0] [1] = f_blanco_rd[1][1]
+    f_blanco[1][0] [2] = f_blanco_rd[1][2]
+    f_blanco[2][0] [0] = f_blanco_rd[2][0]
+    f_blanco[2][0] [1] = f_blanco_rd[2][1]
+    f_blanco[2][0] [2] = f_blanco_rd[2][2]########
+    f_azul[0][0] [0] = f_azul_rd[0][0]
+    f_azul[0][0] [1] = f_azul_rd[0][1]
+    f_azul[0][0] [2] = f_azul_rd[0][2]
+    f_azul[1][0] [0] = f_azul_rd[1][0]
+    f_azul[1][0] [1] = f_azul_rd[1][1]
+    f_azul[1][0] [2] = f_azul_rd[1][2]
+    f_azul[2][0] [0] = f_azul_rd[2][0]
+    f_azul[2][0] [1] = f_azul_rd[2][1]
+    f_azul[2][0] [2] = f_azul_rd[2][2]########
+    f_naranja[0][0] [0] = f_naranja_rd[0][0]
+    f_naranja[0][0] [1] = f_naranja_rd[0][1]
+    f_naranja[0][0] [2] = f_naranja_rd[0][2]
+    f_naranja[1][0] [0] = f_naranja_rd[1][0]
+    f_naranja[1][0] [1] = f_naranja_rd[1][1]
+    f_naranja[1][0] [2] = f_naranja_rd[1][2]
+    f_naranja[2][0] [0] = f_naranja_rd[2][0]
+    f_naranja[2][0] [1] = f_naranja_rd[2][1]
+    f_naranja[2][0] [2] = f_naranja_rd[2][2]########
+    f_verde[0][0] [0] = f_verde_rd[0][0]
+    f_verde[0][0] [1] = f_verde_rd[0][1]
+    f_verde[0][0] [2] = f_verde_rd[0][2]
+    f_verde[1][0] [0] = f_verde_rd[1][0]
+    f_verde[1][0] [1] = f_verde_rd[1][1]
+    f_verde[1][0] [2] = f_verde_rd[1][2]
+    f_verde[2][0] [0] = f_verde_rd[2][0]
+    f_verde[2][0] [1] = f_verde_rd[2][1]
+    f_verde[2][0] [2] = f_verde_rd[2][2]########
+    f_amarillo[0][0] [0] = f_amarillo_rd[0][0]
+    f_amarillo[0][0] [1] = f_amarillo_rd[0][1]
+    f_amarillo[0][0] [2] = f_amarillo_rd[0][2]
+    f_amarillo[1][0] [0] = f_amarillo_rd[1][0]
+    f_amarillo[1][0] [1] = f_amarillo_rd[1][1]
+    f_amarillo[1][0] [2] = f_amarillo_rd[1][2]
+    f_amarillo[2][0] [0] = f_amarillo_rd[2][0]
+    f_amarillo[2][0] [1] = f_amarillo_rd[2][1]
+    f_amarillo[2][0] [2] = f_amarillo_rd[2][2]
+
+'''GIRO DIRECCIÓN HORARIA'''
+
+def direccion_horaria (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_dh=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_dh[0][0]=f_blanco[0][0] [0]    #0
+    f_blanco_dh[0][1]=f_blanco[0][0] [1]    #1
+    f_blanco_dh[0][2]=f_blanco[0][0] [2]    #2
+    f_blanco_dh[1][0]=f_blanco[1][0] [0]    #3
+    f_blanco_dh[1][1]=f_blanco[1][0] [1]    #4
+    f_blanco_dh[1][2]=f_blanco[1][0] [2]    #5
+    f_blanco_dh[2][0]=f_rojo[2][0] [2]      #44
+    f_blanco_dh[2][1]=f_rojo[1][0] [2]      #41
+    f_blanco_dh[2][2]=f_rojo[0][0] [2]      #38
+    print("Cara blanca: ",f_blanco_dh)
+    f_azul_dh=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_azul_dh[0][0]=f_azul[2][0] [0]    #15
+    f_azul_dh[0][1]=f_azul[1][0] [0]    #12
+    f_azul_dh[0][2]=f_azul[0][0] [0]    #9
+    f_azul_dh[1][0]=f_azul[2][0] [1]    #16
+    f_azul_dh[1][1]=f_azul[1][0] [1]    #13
+    f_azul_dh[1][2]=f_azul[0][0] [1]    #10
+    f_azul_dh[2][0]=f_azul[2][0] [2]    #17
+    f_azul_dh[2][1]=f_azul[1][0] [2]    #14
+    f_azul_dh[2][2]=f_azul[0][0] [2]    #11
+    print("Cara azul: ", f_azul_dh)
+    f_naranja_dh=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_dh[0][0]=f_blanco[2][0] [0]    #6
+    f_naranja_dh[0][1]=f_naranja[0][0] [1]   #19
+    f_naranja_dh[0][2]=f_naranja[0][0] [2]   #20
+    f_naranja_dh[1][0]=f_blanco[2][0] [1]    #7
+    f_naranja_dh[1][1]=f_naranja[1][0] [1]   #22
+    f_naranja_dh[1][2]=f_naranja[1][0] [2]   #23
+    f_naranja_dh[2][0]=f_blanco[2][0] [2]    #8
+    f_naranja_dh[2][1]=f_naranja[2][0] [1]   #25
+    f_naranja_dh[2][2]=f_naranja[2][0] [2]   #26
+    print("Cara naranja: ", f_naranja_dh)
+    print("Cara verde: ",f_verde)
+    f_rojo_dh=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_dh[0][0]=f_rojo[0][0] [0]        #36
+    f_rojo_dh[0][1]=f_rojo[0][0] [1]        #37
+    f_rojo_dh[0][2]=f_amarillo[0][0] [0]    #45
+    f_rojo_dh[1][0]=f_rojo[1][0] [0]        #39
+    f_rojo_dh[1][1]=f_rojo[1][0] [1]        #40
+    f_rojo_dh[1][2]=f_amarillo[0][0] [1]    #46
+    f_rojo_dh[2][0]=f_rojo[2][0] [0]        #42
+    f_rojo_dh[2][1]=f_rojo[2][0] [1]        #43
+    f_rojo_dh[2][2]=f_amarillo[0][0] [2]    #47
+    print("Cara roja: ",f_rojo_dh)
+    f_amarillo_dh=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_dh[0][0]=f_naranja[2][0] [0]   #24
+    f_amarillo_dh[0][1]=f_naranja[1][0] [0]   #21
+    f_amarillo_dh[0][2]=f_naranja[0][0] [0]   #18
+    f_amarillo_dh[1][0]=f_amarillo[1][0] [0]  #48
+    f_amarillo_dh[1][1]=f_amarillo[1][0] [1]  #49
+    f_amarillo_dh[1][2]=f_amarillo[1][0] [2]  #50
+    f_amarillo_dh[2][0]=f_amarillo[2][0] [0]  #51
+    f_amarillo_dh[2][1]=f_amarillo[2][0] [1]  #52
+    f_amarillo_dh[2][2]=f_amarillo[2][0] [2]  #53
+    print("Cara amarilla: ",f_amarillo_dh)
+
+    f_blanco[0][0] [0] = f_blanco_dh[0][0]
+    f_blanco[0][0] [1] = f_blanco_dh[0][1]
+    f_blanco[0][0] [2] = f_blanco_dh[0][2]
+    f_blanco[1][0] [0] = f_blanco_dh[1][0]
+    f_blanco[1][0] [1] = f_blanco_dh[1][1]
+    f_blanco[1][0] [2] = f_blanco_dh[1][2]
+    f_blanco[2][0] [0] = f_blanco_dh[2][0]
+    f_blanco[2][0] [1] = f_blanco_dh[2][1]
+    f_blanco[2][0] [2] = f_blanco_dh[2][2]########
+    f_azul[0][0] [0] = f_azul_dh[0][0]
+    f_azul[0][0] [1] = f_azul_dh[0][1]
+    f_azul[0][0] [2] = f_azul_dh[0][2]
+    f_azul[1][0] [0] = f_azul_dh[1][0]
+    f_azul[1][0] [1] = f_azul_dh[1][1]
+    f_azul[1][0] [2] = f_azul_dh[1][2]
+    f_azul[2][0] [0] = f_azul_dh[2][0]
+    f_azul[2][0] [1] = f_azul_dh[2][1]
+    f_azul[2][0] [2] = f_azul_dh[2][2]########
+    f_naranja[0][0] [0] = f_naranja_dh[0][0]
+    f_naranja[0][0] [1] = f_naranja_dh[0][1]
+    f_naranja[0][0] [2] = f_naranja_dh[0][2]
+    f_naranja[1][0] [0] = f_naranja_dh[1][0]
+    f_naranja[1][0] [1] = f_naranja_dh[1][1]
+    f_naranja[1][0] [2] = f_naranja_dh[1][2]
+    f_naranja[2][0] [0] = f_naranja_dh[2][0]
+    f_naranja[2][0] [1] = f_naranja_dh[2][1]
+    f_naranja[2][0] [2] = f_naranja_dh[2][2]########
+    f_amarillo[0][0] [0] = f_amarillo_dh[0][0]
+    f_amarillo[0][0] [1] = f_amarillo_dh[0][1]
+    f_amarillo[0][0] [2] = f_amarillo_dh[0][2]
+    f_amarillo[1][0] [0] = f_amarillo_dh[1][0]
+    f_amarillo[1][0] [1] = f_amarillo_dh[1][1]
+    f_amarillo[1][0] [2] = f_amarillo_dh[1][2]
+    f_amarillo[2][0] [0] = f_amarillo_dh[2][0]
+    f_amarillo[2][0] [1] = f_amarillo_dh[2][1]
+    f_amarillo[2][0] [2] = f_amarillo_dh[2][2]########
+    f_rojo[0][0] [0] = f_rojo_dh[0][0]
+    f_rojo[0][0] [1] = f_rojo_dh[0][1]
+    f_rojo[0][0] [2] = f_rojo_dh[0][2]
+    f_rojo[1][0] [0] = f_rojo_dh[1][0]
+    f_rojo[1][0] [1] = f_rojo_dh[1][1]
+    f_rojo[1][0] [2] = f_rojo_dh[1][2]
+    f_rojo[2][0] [0] = f_rojo_dh[2][0]
+    f_rojo[2][0] [1] = f_rojo_dh[2][1]
+    f_rojo[2][0] [2] = f_rojo_dh[2][2]
+
+'''GIRO DIRECCIÓN ANTIHORARIA'''
+
+def direccion_antihoraria (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_da=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_da[0][0]=f_blanco[0][0] [0]    #0
+    f_blanco_da[0][1]=f_blanco[0][0] [1]    #1
+    f_blanco_da[0][2]=f_blanco[0][0] [2]    #2
+    f_blanco_da[1][0]=f_blanco[1][0] [0]    #3
+    f_blanco_da[1][1]=f_blanco[1][0] [1]    #4
+    f_blanco_da[1][2]=f_blanco[1][0] [2]    #5
+    f_blanco_da[2][0]=f_naranja[0][0] [0]      #44
+    f_blanco_da[2][1]=f_naranja[1][0] [0]      #41
+    f_blanco_da[2][2]=f_naranja[2][0] [0]      #38
+    print("Cara blanca: ",f_blanco_da)
+    f_azul_da=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_azul_da[0][0]=f_azul[0][0] [2]    #15
+    f_azul_da[0][1]=f_azul[1][0] [2]    #12
+    f_azul_da[0][2]=f_azul[2][0] [2]    #9
+    f_azul_da[1][0]=f_azul[0][0] [1]    #16
+    f_azul_da[1][1]=f_azul[1][0] [1]    #13
+    f_azul_da[1][2]=f_azul[2][0] [1]    #10
+    f_azul_da[2][0]=f_azul[0][0] [0]    #17
+    f_azul_da[2][1]=f_azul[1][0] [0]    #14
+    f_azul_da[2][2]=f_azul[2][0] [0]    #11
+    print("Cara azul: ", f_azul_da)
+    f_naranja_da=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_da[0][0]=f_amarillo[0][0] [2]    #6
+    f_naranja_da[0][1]=f_naranja[0][0] [1]   #19
+    f_naranja_da[0][2]=f_naranja[0][0] [2]   #20
+    f_naranja_da[1][0]=f_amarillo[0][0] [1]    #7
+    f_naranja_da[1][1]=f_naranja[1][0] [1]   #22
+    f_naranja_da[1][2]=f_naranja[1][0] [2]   #23
+    f_naranja_da[2][0]=f_amarillo[0][0] [0]    #8
+    f_naranja_da[2][1]=f_naranja[2][0] [1]   #25
+    f_naranja_da[2][2]=f_naranja[2][0] [2]   #26
+    print("Cara naranja: ", f_naranja_da)
+    print("Cara verde: ",f_verde)
+    f_rojo_da=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_da[0][0]=f_rojo[0][0] [0]        #36
+    f_rojo_da[0][1]=f_rojo[0][0] [1]        #37
+    f_rojo_da[0][2]=f_blanco[2][0] [2]    #45
+    f_rojo_da[1][0]=f_rojo[1][0] [0]        #39
+    f_rojo_da[1][1]=f_rojo[1][0] [1]        #40
+    f_rojo_da[1][2]=f_blanco[2][0] [1]    #46
+    f_rojo_da[2][0]=f_rojo[2][0] [0]        #42
+    f_rojo_da[2][1]=f_rojo[2][0] [1]        #43
+    f_rojo_da[2][2]=f_blanco[2][0] [0]    #47
+    print("Cara roja: ",f_rojo_da)
+    f_amarillo_da=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_da[0][0]=f_rojo[0][0] [2]   #24
+    f_amarillo_da[0][1]=f_rojo[1][0] [2]   #21
+    f_amarillo_da[0][2]=f_rojo[2][0] [2]   #18
+    f_amarillo_da[1][0]=f_amarillo[1][0] [0]  #48
+    f_amarillo_da[1][1]=f_amarillo[1][0] [1]  #49
+    f_amarillo_da[1][2]=f_amarillo[1][0] [2]  #50
+    f_amarillo_da[2][0]=f_amarillo[2][0] [0]  #51
+    f_amarillo_da[2][1]=f_amarillo[2][0] [1]  #52
+    f_amarillo_da[2][2]=f_amarillo[2][0] [2]  #53
+    print("Cara amarilla: ",f_amarillo_da)
+
+    f_blanco[0][0] [0] = f_blanco_da[0][0]
+    f_blanco[0][0] [1] = f_blanco_da[0][1]
+    f_blanco[0][0] [2] = f_blanco_da[0][2]
+    f_blanco[1][0] [0] = f_blanco_da[1][0]
+    f_blanco[1][0] [1] = f_blanco_da[1][1]
+    f_blanco[1][0] [2] = f_blanco_da[1][2]
+    f_blanco[2][0] [0] = f_blanco_da[2][0]
+    f_blanco[2][0] [1] = f_blanco_da[2][1]
+    f_blanco[2][0] [2] = f_blanco_da[2][2]########
+    f_azul[0][0] [0] = f_azul_da[0][0]
+    f_azul[0][0] [1] = f_azul_da[0][1]
+    f_azul[0][0] [2] = f_azul_da[0][2]
+    f_azul[1][0] [0] = f_azul_da[1][0]
+    f_azul[1][0] [1] = f_azul_da[1][1]
+    f_azul[1][0] [2] = f_azul_da[1][2]
+    f_azul[2][0] [0] = f_azul_da[2][0]
+    f_azul[2][0] [1] = f_azul_da[2][1]
+    f_azul[2][0] [2] = f_azul_da[2][2]########
+    f_naranja[0][0] [0] = f_naranja_da[0][0]
+    f_naranja[0][0] [1] = f_naranja_da[0][1]
+    f_naranja[0][0] [2] = f_naranja_da[0][2]
+    f_naranja[1][0] [0] = f_naranja_da[1][0]
+    f_naranja[1][0] [1] = f_naranja_da[1][1]
+    f_naranja[1][0] [2] = f_naranja_da[1][2]
+    f_naranja[2][0] [0] = f_naranja_da[2][0]
+    f_naranja[2][0] [1] = f_naranja_da[2][1]
+    f_naranja[2][0] [2] = f_naranja_da[2][2]########
+    f_amarillo[0][0] [0] = f_amarillo_da[0][0]
+    f_amarillo[0][0] [1] = f_amarillo_da[0][1]
+    f_amarillo[0][0] [2] = f_amarillo_da[0][2]
+    f_amarillo[1][0] [0] = f_amarillo_da[1][0]
+    f_amarillo[1][0] [1] = f_amarillo_da[1][1]
+    f_amarillo[1][0] [2] = f_amarillo_da[1][2]
+    f_amarillo[2][0] [0] = f_amarillo_da[2][0]
+    f_amarillo[2][0] [1] = f_amarillo_da[2][1]
+    f_amarillo[2][0] [2] = f_amarillo_da[2][2]########
+    f_rojo[0][0] [0] = f_rojo_da[0][0]
+    f_rojo[0][0] [1] = f_rojo_da[0][1]
+    f_rojo[0][0] [2] = f_rojo_da[0][2]
+    f_rojo[1][0] [0] = f_rojo_da[1][0]
+    f_rojo[1][0] [1] = f_rojo_da[1][1]
+    f_rojo[1][0] [2] = f_rojo_da[1][2]
+    f_rojo[2][0] [0] = f_rojo_da[2][0]
+    f_rojo[2][0] [1] = f_rojo_da[2][1]
+    f_rojo[2][0] [2] = f_rojo_da[2][2]
+
+
+'''******************GIROS DE LA CARA VERDE******************'''
+
+'''GIRO DIRECCIÓN HORARIA VERDE'''
+
+def direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_dhv=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_dhv[0][0]=f_naranja[0][0] [2]    #0
+    f_blanco_dhv[0][1]=f_naranja[1][0] [2]    #1
+    f_blanco_dhv[0][2]=f_naranja[2][0] [2]    #2
+    f_blanco_dhv[1][0]=f_blanco[1][0] [0]    #3
+    f_blanco_dhv[1][1]=f_blanco[1][0] [1]    #4
+    f_blanco_dhv[1][2]=f_blanco[1][0] [2]    #5
+    f_blanco_dhv[2][0]=f_blanco[2][0] [0]      #44
+    f_blanco_dhv[2][1]=f_blanco[2][0] [1]      #41
+    f_blanco_dhv[2][2]=f_blanco[2][0][2]      #38
+    print("Cara blanca: ",f_blanco_dhv)
+    print("Cara azul: ", f_azul)
+    f_naranja_dhv=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_dhv[0][0]=f_naranja[0][0] [0]    #6
+    f_naranja_dhv[0][1]=f_naranja[0][0] [1]   #19
+    f_naranja_dhv[0][2]=f_amarillo[2][0] [2]   #20
+    f_naranja_dhv[1][0]=f_naranja[1][0] [0]    #7
+    f_naranja_dhv[1][1]=f_naranja[1][0] [1]   #22
+    f_naranja_dhv[1][2]=f_amarillo[2][0] [1]   #23
+    f_naranja_dhv[2][0]=f_naranja[2][0] [0]    #8
+    f_naranja_dhv[2][1]=f_naranja[2][0] [1]   #25
+    f_naranja_dhv[2][2]=f_amarillo[2][0] [0]   #26
+    print("Cara naranja: ", f_naranja_dhv)
+    f_verde_dhv=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_dhv[0][0]=f_verde[2][0] [0]        #36
+    f_verde_dhv[0][1]=f_verde[1][0] [0]        #37
+    f_verde_dhv[0][2]=f_verde[0][0] [0]    #45
+    f_verde_dhv[1][0]=f_verde[2][0] [1]        #39
+    f_verde_dhv[1][1]=f_verde[1][0] [1]        #40
+    f_verde_dhv[1][2]=f_verde[0][0] [1]    #46
+    f_verde_dhv[2][0]=f_verde[2][0] [2]        #42
+    f_verde_dhv[2][1]=f_verde[1][0] [2]        #43
+    f_verde_dhv[2][2]=f_verde[0][0] [2]    #47
+    print("Cara verde: ",f_verde_dhv)
+    f_rojo_dhv=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_dhv[0][0]=f_blanco[0][0] [2]        #36
+    f_rojo_dhv[0][1]=f_rojo[0][0] [1]        #37
+    f_rojo_dhv[0][2]=f_rojo[0][0] [2]    #45
+    f_rojo_dhv[1][0]=f_blanco[0][0] [1]        #39
+    f_rojo_dhv[1][1]=f_rojo[1][0] [1]        #40
+    f_rojo_dhv[1][2]=f_rojo[1][0] [2]    #46
+    f_rojo_dhv[2][0]=f_blanco[0][0] [0]        #42
+    f_rojo_dhv[2][1]=f_rojo[2][0] [1]        #43
+    f_rojo_dhv[2][2]=f_rojo[2][0] [2]    #47
+    print("Cara roja: ",f_rojo_dhv)
+    f_amarillo_dhv=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_dhv[0][0]=f_amarillo[0][0] [0]   #24
+    f_amarillo_dhv[0][1]=f_amarillo[0][0] [1]   #21
+    f_amarillo_dhv[0][2]=f_amarillo[0][0] [2]   #18
+    f_amarillo_dhv[1][0]=f_amarillo[1][0] [0]  #48
+    f_amarillo_dhv[1][1]=f_amarillo[1][0] [1]  #49
+    f_amarillo_dhv[1][2]=f_amarillo[1][0] [2]  #50
+    f_amarillo_dhv[2][0]=f_rojo[0][0] [0]  #51
+    f_amarillo_dhv[2][1]=f_rojo[1][0] [0]  #52
+    f_amarillo_dhv[2][2]=f_rojo[2][0] [0]  #53
+    print("Cara amarilla: ",f_amarillo_dhv)
+
+    f_blanco[0][0] [0] = f_blanco_dhv[0][0]
+    f_blanco[0][0] [1] = f_blanco_dhv[0][1]
+    f_blanco[0][0] [2] = f_blanco_dhv[0][2]
+    f_blanco[1][0] [0] = f_blanco_dhv[1][0]
+    f_blanco[1][0] [1] = f_blanco_dhv[1][1]
+    f_blanco[1][0] [2] = f_blanco_dhv[1][2]
+    f_blanco[2][0] [0] = f_blanco_dhv[2][0]
+    f_blanco[2][0] [1] = f_blanco_dhv[2][1]
+    f_blanco[2][0] [2] = f_blanco_dhv[2][2]########
+    f_amarillo[0][0] [0] = f_amarillo_dhv[0][0]
+    f_amarillo[0][0] [1] = f_amarillo_dhv[0][1]
+    f_amarillo[0][0] [2] = f_amarillo_dhv[0][2]
+    f_amarillo[1][0] [0] = f_amarillo_dhv[1][0]
+    f_amarillo[1][0] [1] = f_amarillo_dhv[1][1]
+    f_amarillo[1][0] [2] = f_amarillo_dhv[1][2]
+    f_amarillo[2][0] [0] = f_amarillo_dhv[2][0]
+    f_amarillo[2][0] [1] = f_amarillo_dhv[2][1]
+    f_amarillo[2][0] [2] = f_amarillo_dhv[2][2]########
+    f_naranja[0][0] [0] = f_naranja_dhv[0][0]
+    f_naranja[0][0] [1] = f_naranja_dhv[0][1]
+    f_naranja[0][0] [2] = f_naranja_dhv[0][2]
+    f_naranja[1][0] [0] = f_naranja_dhv[1][0]
+    f_naranja[1][0] [1] = f_naranja_dhv[1][1]
+    f_naranja[1][0] [2] = f_naranja_dhv[1][2]
+    f_naranja[2][0] [0] = f_naranja_dhv[2][0]
+    f_naranja[2][0] [1] = f_naranja_dhv[2][1]
+    f_naranja[2][0] [2] = f_naranja_dhv[2][2]########
+    f_verde[0][0] [0] = f_verde_dhv[0][0]
+    f_verde[0][0] [1] = f_verde_dhv[0][1]
+    f_verde[0][0] [2] = f_verde_dhv[0][2]
+    f_verde[1][0] [0] = f_verde_dhv[1][0]
+    f_verde[1][0] [1] = f_verde_dhv[1][1]
+    f_verde[1][0] [2] = f_verde_dhv[1][2]
+    f_verde[2][0] [0] = f_verde_dhv[2][0]
+    f_verde[2][0] [1] = f_verde_dhv[2][1]
+    f_verde[2][0] [2] = f_verde_dhv[2][2]########
+    f_rojo[0][0] [0] = f_rojo_dhv[0][0]
+    f_rojo[0][0] [1] = f_rojo_dhv[0][1]
+    f_rojo[0][0] [2] = f_rojo_dhv[0][2]
+    f_rojo[1][0] [0] = f_rojo_dhv[1][0]
+    f_rojo[1][0] [1] = f_rojo_dhv[1][1]
+    f_rojo[1][0] [2] = f_rojo_dhv[1][2]
+    f_rojo[2][0] [0] = f_rojo_dhv[2][0]
+    f_rojo[2][0] [1] = f_rojo_dhv[2][1]
+    f_rojo[2][0] [2] = f_rojo_dhv[2][2]
+
+
+'''GIRO DIRECCIÓN ANTIHORARIA VERDE'''
+
+def direccion_antihoraria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    f_blanco_dav=[[[],[],[]],[[],[],[]],[[],[],[]]]
+    f_blanco_dav[0][0]=f_rojo[2][0][0]     #0
+    f_blanco_dav[0][1]=f_rojo[1][0][0]     #1
+    f_blanco_dav[0][2]=f_rojo[0][0][0]     #2
+    f_blanco_dav[1][0]=f_blanco[1][0][0]   #3
+    f_blanco_dav[1][1]=f_blanco[1][0][1]   #4
+    f_blanco_dav[1][2]=f_blanco[1][0][2]   #5
+    f_blanco_dav[2][0]=f_blanco[2][0][0]   #44
+    f_blanco_dav[2][1]=f_blanco[2][0][1]   #41
+    f_blanco_dav[2][2]=f_blanco [2][0][2]  #38
+    print("Cara blanca: ",f_blanco_dav)
+    print("Cara azul: ", f_azul)
+    f_naranja_dav=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_naranja_dav[0][0]=f_naranja[0][0][0]    #6
+    f_naranja_dav[0][1]=f_naranja[0][0][1]   #19
+    f_naranja_dav[0][2]=f_blanco[0][0][0]   #20
+    f_naranja_dav[1][0]=f_naranja[1][0][0]    #7
+    f_naranja_dav[1][1]=f_naranja[1][0][1]   #22
+    f_naranja_dav[1][2]=f_blanco[0][0][1]   #23
+    f_naranja_dav[2][0]=f_naranja[2][0][0]    #8
+    f_naranja_dav[2][1]=f_naranja[2][0][1]   #25
+    f_naranja_dav[2][2]=f_blanco[0][0][2]   #26
+    print("Cara naranja: ", f_naranja_dav)
+    f_verde_dav=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_verde_dav[0][0]=f_verde[0][0][2]        #36
+    f_verde_dav[0][1]=f_verde[1][0][2]        #37
+    f_verde_dav[0][2]=f_verde[2][0][2]    #45
+    f_verde_dav[1][0]=f_verde[0][0][1]        #39
+    f_verde_dav[1][1]=f_verde[1][0][1]        #40
+    f_verde_dav[1][2]=f_verde[2][0][1]    #46
+    f_verde_dav[2][0]=f_verde[0][0][0]        #42
+    f_verde_dav[2][1]=f_verde[1][0][0]        #43
+    f_verde_dav[2][2]=f_verde[2][0][0]    #47
+    print("Cara verde: ",f_verde_dav)
+    f_rojo_dav=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_rojo_dav[0][0]=f_amarillo[2][0] [0]        #36
+    f_rojo_dav[0][1]=f_rojo[0][0][1]        #37
+    f_rojo_dav[0][2]=f_rojo[0][0][2]    #45
+    f_rojo_dav[1][0]=f_amarillo[2][0][1]        #39
+    f_rojo_dav[1][1]=f_rojo[1][0][1]        #40
+    f_rojo_dav[1][2]=f_rojo[1][0][2]    #46
+    f_rojo_dav[2][0]=f_amarillo[2][0][2]        #42
+    f_rojo_dav[2][1]=f_rojo[2][0][1]        #43
+    f_rojo_dav[2][2]=f_rojo[2][0][2]    #47
+    print("Cara roja: ",f_rojo_dav)
+    f_amarillo_dav=[[[],[],[]],[[],[],[]],[[],[],[]]]########
+    f_amarillo_dav[0][0]=f_amarillo[0][0][0]   #24
+    f_amarillo_dav[0][1]=f_amarillo[0][0][1]   #21
+    f_amarillo_dav[0][2]=f_amarillo[0][0][2]   #18
+    f_amarillo_dav[1][0]=f_amarillo[1][0][0]  #48
+    f_amarillo_dav[1][1]=f_amarillo[1][0][1]  #49
+    f_amarillo_dav[1][2]=f_amarillo[1][0][2]  #50
+    f_amarillo_dav[2][0]=f_naranja[2][0][2]  #51
+    f_amarillo_dav[2][1]=f_naranja[1][0][2]  #52
+    f_amarillo_dav[2][2]=f_naranja[0][0][2]  #53
+    print("Cara amarilla: ",f_amarillo_dav)
+
+    f_blanco[0][0][0] = f_blanco_dav[0][0]
+    f_blanco[0][0][1] = f_blanco_dav[0][1]
+    f_blanco[0][0][2] = f_blanco_dav[0][2]
+    f_blanco[1][0][0] = f_blanco_dav[1][0]
+    f_blanco[1][0][1] = f_blanco_dav[1][1]
+    f_blanco[1][0][2] = f_blanco_dav[1][2]
+    f_blanco[2][0][0] = f_blanco_dav[2][0]
+    f_blanco[2][0][1] = f_blanco_dav[2][1]
+    f_blanco[2][0][2] = f_blanco_dav[2][2]########
+    f_amarillo[0][0][0] = f_amarillo_dav[0][0]
+    f_amarillo[0][0][1] = f_amarillo_dav[0][1]
+    f_amarillo[0][0][2] = f_amarillo_dav[0][2]
+    f_amarillo[1][0][0] = f_amarillo_dav[1][0]
+    f_amarillo[1][0][1] = f_amarillo_dav[1][1]
+    f_amarillo[1][0][2] = f_amarillo_dav[1][2]
+    f_amarillo[2][0][0] = f_amarillo_dav[2][0]
+    f_amarillo[2][0][1] = f_amarillo_dav[2][1]
+    f_amarillo[2][0][2] = f_amarillo_dav[2][2]########
+    f_naranja[0][0][0] = f_naranja_dav[0][0]
+    f_naranja[0][0][1] = f_naranja_dav[0][1]
+    f_naranja[0][0][2] = f_naranja_dav[0][2]
+    f_naranja[1][0][0] = f_naranja_dav[1][0]
+    f_naranja[1][0][1] = f_naranja_dav[1][1]
+    f_naranja[1][0][2] = f_naranja_dav[1][2]
+    f_naranja[2][0][0] = f_naranja_dav[2][0]
+    f_naranja[2][0][1] = f_naranja_dav[2][1]
+    f_naranja[2][0][2] = f_naranja_dav[2][2]########
+    f_verde[0][0][0] = f_verde_dav[0][0]
+    f_verde[0][0][1] = f_verde_dav[0][1]
+    f_verde[0][0][2] = f_verde_dav[0][2]
+    f_verde[1][0][0] = f_verde_dav[1][0]
+    f_verde[1][0][1] = f_verde_dav[1][1]
+    f_verde[1][0][2] = f_verde_dav[1][2]
+    f_verde[2][0][0] = f_verde_dav[2][0]
+    f_verde[2][0][1] = f_verde_dav[2][1]
+    f_verde[2][0][2] = f_verde_dav[2][2]########
+    f_rojo[0][0][0] = f_rojo_dav[0][0]
+    f_rojo[0][0][1] = f_rojo_dav[0][1]
+    f_rojo[0][0][2] = f_rojo_dav[0][2]
+    f_rojo[1][0][0] = f_rojo_dav[1][0]
+    f_rojo[1][0][1] = f_rojo_dav[1][1]
+    f_rojo[1][0][2] = f_rojo_dav[1][2]
+    f_rojo[2][0][0] = f_rojo_dav[2][0]
+    f_rojo[2][0][1] = f_rojo_dav[2][1]
+    f_rojo[2][0][2] = f_rojo_dav[2][2]
+
+    f_blanco[0][0][0] = f_blanco_dav[0][0]
+    f_blanco[0][0][1] = f_blanco_dav[0][1]
+    f_blanco[0][0][2] = f_blanco_dav[0][2]
+    f_blanco[1][0][0] = f_blanco_dav[1][0]
+    f_blanco[1][0][1] = f_blanco_dav[1][1]
+    f_blanco[1][0][2] = f_blanco_dav[1][2]
+    f_blanco[2][0][0] = f_blanco_dav[2][0]
+    f_blanco[2][0][1] = f_blanco_dav[2][1]
+    f_blanco[2][0][2] = f_blanco_dav[2][2]########
+    f_amarillo[0][0][0] = f_amarillo_dav[0][0]
+    f_amarillo[0][0][1] = f_amarillo_dav[0][1]
+    f_amarillo[0][0][2] = f_amarillo_dav[0][2]
+    f_amarillo[1][0][0] = f_amarillo_dav[1][0]
+    f_amarillo[1][0][1] = f_amarillo_dav[1][1]
+    f_amarillo[1][0][2] = f_amarillo_dav[1][2]
+    f_amarillo[2][0][0] = f_amarillo_dav[2][0]
+    f_amarillo[2][0][1] = f_amarillo_dav[2][1]
+    f_amarillo[2][0][2] = f_amarillo_dav[2][2]########
+    f_naranja[0][0][0] = f_naranja_dav[0][0]
+    f_naranja[0][0][1] = f_naranja_dav[0][1]
+    f_naranja[0][0][2] = f_naranja_dav[0][2]
+    f_naranja[1][0][0] = f_naranja_dav[1][0]
+    f_naranja[1][0][1] = f_naranja_dav[1][1]
+    f_naranja[1][0][2] = f_naranja_dav[1][2]
+    f_naranja[2][0][0] = f_naranja_dav[2][0]
+    f_naranja[2][0][1] = f_naranja_dav[2][1]
+    f_naranja[2][0][2] = f_naranja_dav[2][2]########
+    f_verde[0][0][0] = f_verde_dav[0][0]
+    f_verde[0][0][1] = f_verde_dav[0][1]
+    f_verde[0][0][2] = f_verde_dav[0][2]
+    f_verde[1][0][0] = f_verde_dav[1][0]
+    f_verde[1][0][1] = f_verde_dav[1][1]
+    f_verde[1][0][2] = f_verde_dav[1][2]
+    f_verde[2][0][0] = f_verde_dav[2][0]
+    f_verde[2][0][1] = f_verde_dav[2][1]
+    f_verde[2][0][2] = f_verde_dav[2][2]########
+    f_rojo[0][0][0] = f_rojo_dav[0][0]
+    f_rojo[0][0][1] = f_rojo_dav[0][1]
+    f_rojo[0][0][2] = f_rojo_dav[0][2]
+    f_rojo[1][0][0] = f_rojo_dav[1][0]
+    f_rojo[1][0][1] = f_rojo_dav[1][1]
+    f_rojo[1][0][2] = f_rojo_dav[1][2]
+    f_rojo[2][0][0] = f_rojo_dav[2][0]
+    f_rojo[2][0][1] = f_rojo_dav[2][1]
+    f_rojo[2][0][2] = f_rojo_dav[2][2]
+
+
+    #azul-naranja-amarillo
+    ((f_azul[2][0][2]==17 and f_naranja[2][0][0]==24 and f_amarillo[0][0][2]==47) or (f_azul[2][0][2]==47 and f_naranja[2][0][0]==17 and f_amarillo[0][0][2]==24) or (f_azul[2][0][2]==24 and f_naranja[2][0][0]==47 and f_amarillo[0][0][2]==17))
+    #azul-amarillo-rojo
+    ((f_azul[2][0][0]==15 and f_rojo[2][0][2]==44 and f_amarillo[0][0][0]==45) or (f_azul[2][0][0]==44 and f_rojo[2][0][2]==45 and f_amarillo[0][0][0]==15) or (f_azul[2][0][0]==45 and f_rojo[2][0][2]==15 and f_amarillo[0][0][0]==44))
+    #rojo-amarillo-verde
+    ((f_rojo[2][0][0]==42 and f_verde[2][0][2]==35 and f_amarillo[2][0][0]==51) or (f_rojo[2][0][0]==35 and f_verde[2][0][2]==51 and f_amarillo[2][0][0]==42) or (f_rojo[2][0][0]==51 and f_verde[2][0][2]==42 and f_amarillo[2][0][0]==35))
+    #verde-naranja-amarillo
+    ((f_verde[2][0][0]==33 and f_naranja[2][0][2]==26 and f_amarillo[2][0][2]==53) or (f_verde[2][0][0]==26 and f_naranja[2][0][2]==53 and f_amarillo[2][0][2]==33) or (f_verde[2][0][0]==53 and f_naranja[2][0][2]==33 and f_amarillo[2][0][2]==26))
+
+
+
+
+num=int(input("Ingrese el número que desea encontrar: "))           #Encontrar un elemento en las listas
+
+"""Encontrae el número"""
+
+#La linea de abajo está comentada
+if [fila1_b] in f_blanco:                           #Verificamos si el valor que ingresamos está en la primera fila de la cara blanca, y así se hace con las demás filas y los demás colores
+    if num in fila1_b:
+        print("Fila: ",f_blanco.index([fila1_b]))       #Si se encuentra entonces nos dice el número de la fila
+        print("Columna: ",fila1_b.index(num))           #Nos dice el número de la columna
+        print("Cara ", f_blanco)                        #Y en que cara se encuentra
+if [fila2_b] in f_blanco:
+    if num in fila2_b:
+        print("Fila: ",f_blanco.index([fila2_b]))
+        print("Columna: ",fila2_b.index(num))
+        print("Cara ", f_blanco)
+if [fila3_b] in f_blanco:
+    if num in fila3_b:
+        print("Fila: ",f_blanco.index([fila3_b]))
+        print("Columna: ",fila3_b.index(num))
+        print("Cara ", f_blanco)
+
+if [fila1_a] in f_azul:
+    if num in fila1_a:
+        print("Fila: ",f_azul.index([fila1_a]))
+        print("Columna: ",fila1_a.index(num))
+        print("Cara ", f_azul)
+if [fila2_a] in f_azul:
+    if num in fila2_a:
+        print("Fila: ",f_azul.index([fila2_a]))
+        print("Columna: ",fila2_a.index(num))
+        print("Cara ", f_azul)
+if [fila3_a] in f_azul:
+    if num in fila3_a:
+        print("Fila: ",f_azul.index([fila3_a]))
+        print("Columna: ",fila3_a.index(num))
+        print("Cara ", f_azul)
+
+if [fila1_n] in f_naranja:
+    if num in fila1_n:
+        print("Fila: ",f_naranja.index([fila1_n]))
+        print("Columna: ",fila1_n.index(num))
+        print("Cara ", f_naranja)
+if [fila2_n] in f_naranja:
+    if num in fila2_n:
+        print("Fila: ",f_naranja.index([fila2_n]))
+        print("Columna: ",fila2_n.index(num))
+        print("Cara ", f_naranja)
+if [fila3_n] in f_naranja:
+    if num in fila3_n:
+        print("Fila: ",f_naranja.index([fila3_n]))
+        print("Columna: ",fila3_n.index(num))
+        print("Cara ", f_naranja)
+
+if [fila1_v] in f_verde:
+    if num in fila1_v:
+        print("Fila: ",f_verde.index([fila1_v]))
+        print("Columna: ",fila1_v.index(num))
+        print("Cara ", f_verde)
+if [fila2_v] in f_verde:
+    if num in fila2_v:
+        print("Fila: ",f_verde.index([fila2_v]))
+        print("Columna: ",fila2_v.index(num))
+        print("Cara ", f_verde)
+if [fila3_v] in f_verde:
+    if num in fila3_v:
+        print("Fila: ",f_verde.index([fila3_v]))
+        print("Columna: ",fila3_v.index(num))
+        print("Cara ", f_verde)
+
+if [fila1_r] in f_rojo:
+    if num in fila1_r:
+        print("Fila: ",f_rojo.index([fila1_r]))
+        print("Columna: ",fila1_r.index(num))
+        print("Cara ", f_rojo)
+if [fila2_r] in f_rojo:
+    if num in fila2_r:
+        print("Fila: ",f_rojo.index([fila2_r]))
+        print("Columna: ",fila2_r.index(num))
+        print("Cara ", f_rojo)
+if [fila3_r] in f_rojo:
+    if num in fila3_r:
+        print("Fila: ",f_rojo.index([fila3_r]))
+        print("Columna: ",fila3_r.index(num))
+        print("Cara ", f_rojo)
+
+if [fila1_am] in f_amarillo:
+    if num in fila1_am:
+        print("Fila: ",f_amarillo.index([fila1_am]))
+        print("Columna: ",fila1_am.index(num))
+        print("Cara ", f_amarillo)
+if [fila2_am] in f_amarillo:
+    if num in fila2_am:
+        print("Fila: ",f_amarillo.index([fila2_am]))
+        print("Columna: ",fila2_r.index(num))
+        print("Cara ", f_amarillo)
+if [fila3_am] in f_amarillo:
+    if num in fila3_am:
+        print("Fila: ",f_amarillo.index([fila3_am]))
+        print("Columna: ",fila3_am.index(num))
+        print("Cara ", f_amarillo)
+
+
+"""CRUZ BLANCA"""
+
+#7
+#Se crea una función con un algoritmo que desarrollamos en conjunto para que el valor número 7 lo podamos ubicar al comienzo de la cruz
+
+def cruz_7 (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo):
+    if 7 in fila1_b:
+        print("Está en la cara blanca")
+        while f_azul[0][0][1] != 10:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira arriba a la derecha")
+    elif 7 in fila2_b:
+        print("Está en la cara blanca")
+        while f_azul[0][0][1] != 10:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira arriba a la derecha")
+    elif 7 in fila3_b:
+        print("Está en la cara blanca")
+        while f_azul[0][0][1] != 10:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira arriba a la derecha")
+
+    if 7 in fila1_a:
+        print("Está en la cara azul")
+        while f_azul[2][0][1] != 7:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira dirección horaria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-derecha")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha-arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gra dirección antihoraria")
+    elif 7 in fila2_a:
+        print("Está en la cara azul")
+        while f_azul[2][0][1] != 7:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira dirección horaria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-derecha")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha-arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gra dirección antihoraria")
+    elif 7 in fila3_a:
+        print("Está en la cara azul")
+        while f_azul[2][0][1] != 7:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira dirección horaria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-derecha")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha-arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira dirección antihoraria")
+
+    if 7 in fila1_n:
+        print("Está en la cara naranja")
+        while f_azul[1][0][2] != 10:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha_arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira en direccion antihoraria ")
+    elif 7 in fila2_n:
+        print("Está en la cara naranja")
+        while f_azul[1][0][2] != 10:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha-arriba ")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion antihoraria")
+    elif 7 in fila3_n:
+        print("Está en la cara naranja")
+        while f_azul[1][0][2] != 10:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha-arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira en direccion antihoraria")
+
+    if 7 in fila1_v:
+        print("Está en la cara verde")
+        while f_verde[2][0][1] != 7:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direcion horaria-verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha-arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira dieccion antihoraria")
+    elif 7 in fila2_v:
+        print("Está en la cara verde")
+        while f_verde[2][0][1] != 7:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direcion horaria-verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha-arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira dieccion antihoraria")
+    elif 7 in fila3_v:
+        print("Está en la cara verde")
+        while f_verde[2][0][1] != 7:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direcion horaria-verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha-arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira dieccion antihoraria")
+
+    if 7 in fila1_r:
+        print("Está en la cara rojo")
+        while f_azul[1][0][0] != 10:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda-arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion horaria")
+    elif 7 in fila2_r:
+        print("Está en la cara rojo")
+        while f_azul[1][0][0] != 10:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda-arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion horaria")
+    elif 7 in fila3_r:
+        print("Está en la cara rojo")
+        while f_azul[1][0][0] != 10:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda-arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion horaria")
+
+    if 7 in fila1_am:
+        print("Está en la cara amarillo")
+        while f_azul[2][0][1] != 10:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira abajo-derecha")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion antihoraria")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion antihoraria")
+    elif 7 in fila2_am:
+        print("Está en la cara amarillo")
+        while f_azul[2][0][1] != 10:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira abajo-derecha")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion antihoraria")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion antihoraria")
+    elif 7 in fila3_am:
+        print("Está en la cara amarillo")
+        while f_azul[2][0][1] != 10:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira abajo-derecha")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion antihoraria")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion antihoraria")
+
+print(cruz_7 (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo))
+
+print(" ")
+
+#3
+#Seguidamente se sigue a buscar y encontrar el valor 3 y ubicarlo donde tiene que estar en la cruz y así pasa igual con el valor 5 y 1
+def cruz_3(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo):
+    if 3 in fila1_a:
+        print("Está en la cara azul")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda-arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+    elif 3 in fila2_a:
+        print("Está en la cara azul")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda-arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+    elif 3 in fila3_a:
+        print("Está en la cara azul")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda-arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+
+    if 3 in fila1_r:
+        print("Está en cara rojo")
+        while f_rojo[2][0][1] != 3:
+            izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira izquierda-abajo")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-derecha")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-arriba")
+
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+    elif 3 in fila2_r:
+        print("Está en cara rojo")
+        while f_rojo[2][0][1] != 3:
+            izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira izquierda-abajo")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-derecha")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+    elif 3 in fila3_r:
+        print("Está en cara rojo")
+        while f_rojo[2][0][1] != 3:
+            izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira izquierda-abajo")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-derecha")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+
+    if 3 in fila1_b:
+        print("Está en cara blanco")
+        while f_blanco[1][0][0] != 3:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira arriba-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-abajo")
+        while f_blanco[2][0][1] != 7:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print(" Gira arriba-derecha")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-arriba")
+    elif 3 in fila2_b:
+        print("Está en cara blanco")
+        while f_blanco[1][0][0] != 3:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print(" Gira arriba-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-abajo")
+        while f_blanco[2][0][1] != 7:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print(" Gira arriba-derecha")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-arriba")
+    elif 3 in fila3_b:
+        print("Está en cara blanco")
+        while f_blanco[1][0][0] != 3:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print(" Gira arriba-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-abajo")
+        while f_blanco[2][0][1] != 7:
+            arriba_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print(" Gira arriba-derecha")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda-arriba")
+
+    if 3 in fila1_n:
+        print("Está en cara naranja")
+        while f_naranja[2][0][1] != 3:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha-arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-izquierda")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria ")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print(" Gira izquierda-arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+    elif 3 in fila2_n:
+        print("Está en cara naranja")
+        while f_naranja[2][0][1] != 3:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha-arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-izquierda")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda arrinba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria ")
+    elif 3 in fila3_n:
+        print("Está en cara naranja")
+        while f_naranja[2][0][1] != 3:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha-arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo-izquierda")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria ")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda arrinba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria ")
+
+    if 3 in fila1_v:
+        print("Está en cara verde")
+        while f_verde[2][0][1] != 3:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print(" Gira direccion horario verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print(" Gira abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo izquierda")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria ")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+    elif 3 in fila2_v:
+        print("Está en cara verde")
+        while f_verde[2][0][1] != 3:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print(" Gira direccion horario verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print(" Gira abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo izquierda")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria ")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+    elif 3 in fila3_v:
+        print("Está en cara verde")
+        while f_verde[2][0][1] != 3:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print(" Gira direccion horario verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print(" Gira abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo izquierda")
+        while f_azul[1][0][0] != 3:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria ")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izquierda arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horaria")
+
+    if 3 in fila1_am:
+        print("Está en cara amarillo")
+        while f_amarillo[1][0][0] != 3:
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira abajo izquierda")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda arriba")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda arriba")
+    elif 3 in fila2_am:
+        print("Está en cara amarillo")
+        while f_amarillo[1][0][0] != 3:
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira abajo izquierda")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda arriba")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda arriba")
+    elif 3 in fila3_am:
+        print("Está en cara amarillo")
+        while f_amarillo[1][0][0] != 3:
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira abajo izquierda")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda arriba")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira izqueirda arriba")
+
+print(cruz_3 (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo))
+
+print(" ")
+
+#5
+def cruz_5(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo):
+    if 5 in fila1_b:
+        print("Esta en la cara blanca ")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba ")
+    elif 5 in fila2_b:
+        print("Esta en la cara blanca ")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba ")
+    elif 5 in fila3_b:
+        print("Esta en la cara blanca ")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira direccion horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba ")
+
+    if 5 in fila1_a:
+        print("Está en la cara azul")
+        while f_azul[1][0][2] != 5:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira horaria")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horario")
+    elif 5 in fila2_a:
+        print("Está en la cara azul")
+        while f_azul[1][0][2] != 5:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira horaria")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horario")
+    elif 5 in fila3_a:
+        print("Está en la cara azul")
+        while f_azul[1][0][2] != 5:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira horaria")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Gira derecha arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira direccion horario")
+
+    if 5 in fila1_n:
+        print("Está en la cara naranja")
+        while f_azul[2][0][1] != 5:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo izqueirda")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria ")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria")
+    elif 5 in fila2_n:
+        while f_azul[2][0][1] != 5:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo izqueirda")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria ")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria")
+    elif 5 in fila3_n:
+        print("Está en la cara naranja")
+        while f_azul[2][0][1] != 5:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Gira derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo izqueirda")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria ")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria")
+
+    if 5 in fila1_v:
+        print("Está en la cara verde")
+        while f_verde[1][0][0] != 5:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria verde")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+    elif 5 in fila2_v:
+        print("Está en la cara verde")
+        while f_verde[1][0][0] != 5:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria verde")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+    elif 5 in fila3_v:
+        print("Está en la cara verde")
+        while f_verde[1][0][0] != 5:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria verde")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+
+    if 5 in fila1_r:
+        print("Está en la cara roja")
+        while f_azul[2][0][1] != 5:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira izqueirda abajo ")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion antihoraria")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria")
+        while f_azul[1][0][0] != 3:
+            izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izqueirda abajo")
+    elif 5 in fila2_r:
+        while f_azul[2][0][1] != 5:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira izqueirda abajo ")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion antihoraria")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria")
+        while f_azul[1][0][0] != 3:
+            izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izqueirda abajo")
+    elif 5 in fila3_r:
+        while f_azul[2][0][1] != 5:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira izqueirda abajo ")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion antihoraria")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria")
+        while f_azul[1][0][0] != 3:
+            izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izqueirda abajo")
+
+    if 5 in fila1_am:
+        print("Está en la cara AMARILLA")
+        while f_azul[1][0][2] != 1:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira abajo derecha")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba ")
+    elif 5 in fila2_am:
+        print("Está en la cara AMARILLA")
+        while f_azul[1][0][2] != 1:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira abajo derecha")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba ")
+    elif 5 in fila3_am:
+        print("Está en la cara AMARILLA")
+        while f_azul[1][0][2] != 1:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira abajo derecha")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba ")
+
+print(cruz_5 (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo))
+
+print(" ")
+
+#1
+def cruz_1(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo):
+    if 1 in fila1_b:
+        print("Esta armada la cruz")
+    elif 1 in fila2_b:
+        print("Está en la cara blanca")
+    elif 1 in fila3_b:
+        print("Está en la cara blanca")
+
+    if 1 in fila1_a:
+        print("Está en la cara azul")
+        while f_azul[2][0][1] != 1:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horario")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print(" gira abajo derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria")
+    elif 1 in fila2_a:
+        print("Está en la cara azul")
+        while f_azul[2][0][1] != 1:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horario")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print(" gira abajo derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria")
+    elif 1 in fila3_a:
+        print("Está en la cara azul")
+        while f_azul[2][0][1] != 1:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horario")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print(" gira abajo derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira direccion horaria")
+
+    if 1 in fila1_n:
+        print("Está en la cara naranja")
+        while f_naranja[1][0][2] != 1:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira derecha abajo")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria verd")
+        while f_blanco[1][0][2] != 5:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira derecha abajo")
+    elif 1 in fila2_n:
+        print("Está en la cara naranja")
+        while f_naranja[1][0][2] != 1:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira derecha abajo")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria verd")
+        while f_blanco[1][0][2] != 5:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira derecha abajo")
+    elif 1 in fila3_n:
+        print("Está en la cara naranja")
+        while f_naranja[1][0][2] != 1:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira derecha abajo")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira direccion horaria verd")
+        while f_blanco[1][0][2] != 5:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira derecha abajo")
+
+    if 1 in fila1_v:
+        print("Está en la cara verde")
+        while f_verde[2][0][1] != 1:
+            direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+            print("gira direccion horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo izqueirda")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+    elif 1 in fila2_v:
+        print("Está en la cara verde")
+        while f_verde[2][0][1] != 1:
+            direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+            print("gira direccion horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo izqueirda")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+    elif 1 in fila3_v:
+        print("Está en la cara verde")
+        while f_verde[2][0][1] != 1:
+            direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+            print("gira direccion horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira abajo izqueirda")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha abajo")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("gira derecha arriba")
+
+    if 1 in fila1_r:
+        print("Está en la cara roja")
+        while f_rojo[1][0][0] != 1:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izqueirda arriba")
+        direccion_antihoraria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion antihoraria verde")
+        while f_blanco[1][0][0] != 3:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda arriba")
+    elif 1 in fila2_r:
+        print("Está en la cara roja")
+        while f_rojo[1][0][0] != 1:
+           izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+           print("gira izqueirda arriba")
+        direccion_antihoraria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion antihoraria verde")
+        while f_blanco[1][0][0] != 3:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda arriba")
+    elif 1 in fila3_r:
+        print("Está en la cara roja")
+        while f_rojo[1][0][0] != 1:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izqueirda arriba")
+        direccion_antihoraria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion antihoraria verde")
+        while f_blanco[1][0][0] != 3:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira izquierda arriba")
+
+    if 1 in fila1_am:
+        print("Está en la cara AMARILLA")
+        while f_amarillo[2][0][1] != 1:
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira abajo izquierda")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print(" gira direccion horaria verde")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+    elif 1 in fila2_am:
+        print("Está en la cara AMARILLA")
+        while f_amarillo[2][0][1] != 1:
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira abajo izquierda")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print(" gira direccion horaria verde")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+    elif 1 in fila3_am:
+        print("Está en la cara AMARILLA")
+        while f_amarillo[2][0][1] != 1:
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("gira abajo izquierda")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print(" gira direccion horaria verde")
+        direccion_horaria_verde (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo)
+        print("gira direccion horaria verde")
+
+print(cruz_1 (f_blanco,f_azul,f_naranja,f_verde,f_rojo,f_amarillo))
+
+print(" ")
+
+def esquina_0 (f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo):
+    if 0 in fila1_b:
+        if 0 in [0][0][0]:
+            pass
+        if 0 in [0][0][2]:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("derecha-arriba")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-derecha")
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("derecha-abajo")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-derecha")
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("dirección horaria verde")
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-izquierda")
+            direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("dirección antihoraria verde")
+    elif 0 in fila3_b:
+        if 0 in [2][0][0]:
+            direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("dirección antihoraria")
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-izquierda")
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-izquierda")
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("izquierda-arriba")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-derecha")
+            izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("izquierda-abajo")
+
+        if 0 in [2][0][2]:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha-abajo")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-derecha")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-derecha")
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha-arriba")
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-izquierda")
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-derecha")
+            izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-abajo")
+
+    if 0 in fila1_a:
+        while f_azul[2][0][0] != 0:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+    elif 0 in fila2_a:
+        while f_azul[2][0][0] != 0:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+    elif 0 in fila3_a:
+        while f_azul[2][0][0] != 0:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+
+    if 0 in fila1_n:
+        while f_naranja[2][0][2] != 0:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha-abajo")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda-abajo")
+        while f_naranja[0][0][1] != 1:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+    elif 0 in fila2_n:
+        while f_naranja[2][0][2] != 0:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha-abajo")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda-abajo")
+        while f_naranja[0][0][1] != 1:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+    elif 0 in fila3_n:
+        while f_naranja[2][0][2] != 0:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha-abajo")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda-abajo")
+        while f_naranja[0][0][1] != 1:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+
+    if 0 in fila1_v:
+        while f_verde[2][0][2] != 0:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("izquierda-abajo")
+        while f_blanco[0][0][1] != 1:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+    elif 0 in fila2_v:
+        while f_verde[2][0][2] != 0:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("izquierda-abajo")
+        while f_blanco[0][0][1] != 1:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+    elif 0 in fila3_v:
+        while f_verde[2][0][2] != 0:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("izquierda-abajo")
+        while f_blanco[0][0][1] != 1:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+
+    if 0 in fila1_r:
+        while f_rojo[2][0][2] != 0:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        while f_blanco[1][0][0] != 3:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda abajo")
+    elif 0 in fila2_r:
+        while f_rojo[2][0][2] != 0:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        while f_blanco[1][0][0] != 3:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda abajo")
+    elif 0 in fila3_r:
+        while f_rojo[2][0][2] != 0:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        while f_blanco[1][0][0] != 3:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        izquierda_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Izquierda abajo")
+
+    if 0 in fila1_am:
+        while f_amarillo[0][0][2] != 0:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha-abajo")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha-arriba")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+    elif 0 in fila2_am:
+        while f_amarillo[0][0][2] != 0:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha-abajo")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha-arriba")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+    elif 0 in fila3_am:
+        while f_amarillo[0][0][2] != 0:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha-abajo")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha-arriba")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+
+
+def esquina_2(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo):
+
+    if 2 in fila3_b:
+        if 2 in [2][0][0]:
+            direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección antihoraria")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-derecha")
+            direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección antihoraria verde")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo-derecha")
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        if 2 in [2][0][2]:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("derecha-abajo")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-derecha")
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("derecha-arriba")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-derecha")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-derecha")
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("derecha-arriba")
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo-izquierda")
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("derecha-abajo")
+
+    if 2 in fila1_a:
+        while f_azul[2][0][2]!= 2:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+    elif 2 in fila2_a:
+        while f_azul[2][0][2]!= 2:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+    elif 2 in fila3_a:
+        while f_azul[2][0][2]!= 2:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+
+    if 2 in fila1_n:
+        while f_naranja[2][0][2] != 2:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo Derecha ")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        while f_naranja[0][0][1] != 19:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+    if 2 in fila2_n:
+        while f_naranja[2][0][2] != 2:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo Derecha ")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        while f_naranja[0][0][1] != 19:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+    if 2 in fila3_n:
+        while f_naranja[2][0][2] != 2:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo Derecha ")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        while f_naranja[0][0][1] != 19:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+
+    if 2 in fila1_v:
+        while f_verde[2][0][2] != 2:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        while f_verde[0][0][1] != 28:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+    if 2 in fila2_v:
+        while f_verde[2][0][2] != 2:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        while f_verde[0][0][1] != 28:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+    if 2 in fila3_v:
+        while f_verde[2][0][2] != 2:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        while f_verde[0][0][1] != 28:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+
+    if 2 in fila1_r:
+        while f_rojo [2][0][2] != 2:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        while f_rojo[0][0][1] != 37:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+    elif 2 in fila2_r:
+        while f_rojo [2][0][2] != 2:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        while f_rojo[0][0][1] != 37:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+    elif 2 in fila3_r:
+        while f_rojo [2][0][2] != 2:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        while f_rojo[0][0][1] != 37:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Izquierda-arriba")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo-derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+
+    if 2 in fila1_am:
+        while f_amarillo[2][0][2] != 2:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo derecha")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha abajo")
+    elif 2 in fila2_am:
+        while f_amarillo[2][0][2] != 2:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo derecha")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha abajo")
+    elif 2 in fila3_am:
+        while f_amarillo[2][0][2] != 2:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo derecha")
+        direccion_antihoraria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Derecha abajo")
+
+
+def esquina_6(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo):
+    if 6 in fila3_b:
+        if 6 in [2][0][2]:
+            derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha abajo")
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo izquierda")
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+            abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo izquierda")
+            direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección antihoraria")
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("abajo Derecha")
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+
+    if 6 in fila1_a:
+        while f_azul[2][0][2] != 6:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+    if 6 in fila2_a:
+        while f_azul[2][0][2] != 6:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+    if 6 in fila3_a:
+        while f_azul[2][0][2] != 6:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        while f_azul[0][0][1] != 10:
+            direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+
+    if 6 in fila1_n:
+        while f_naranja[2][0][2] != 6:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo Derecha ")
+        while f_naranja[0][0][1] != 19:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo Derecha ")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+    elif 6 in fila2_n:
+        while f_naranja[2][0][2] != 6:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo Derecha ")
+        while f_naranja[0][0][1] != 19:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo Derecha ")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+    elif 6 in fila3_n:
+        while f_naranja[2][0][2] != 6:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo Derecha ")
+        while f_naranja[0][0][1] != 19:
+            derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Derecha arriba")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo Derecha ")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+
+    if 6 in fila1_v:
+        while f_verde[2][0][2] != 6:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        while f_verde[0][0][1] != 28:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+    if 6 in fila2_v:
+        while f_verde[2][0][2] != 6:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        while f_verde[0][0][1] != 28:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+    if 6 in fila3_v:
+        while f_verde[2][0][2] != 6:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        while f_verde[0][0][1] != 28:
+            direccion_horaria_verde(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Dirección horaria verde")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+
+    if 6 in fila1_r:
+        while f_rojo[2][0][2] != 6:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo derecha")
+        while f_rojo[0][0][1] != 37:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("izquierda arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección horaria")
+    if 6 in fila2_r:
+        while f_rojo[2][0][2] != 6:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo derecha")
+        while f_rojo[0][0][1] != 37:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("izquierda arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección horaria")
+    if 6 in fila3_r:
+        while f_rojo[2][0][2] != 6:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("izquierda arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo derecha")
+        while f_rojo[0][0][1] != 37:
+            izquierda_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("izquierda arriba")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección antihoraria")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("dirección horaria")
+
+    if 6 in fila1_am:
+        while f_amarillo[0][0][2] != 6:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha Abajo")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+    if 6 in fila2_am:
+        while f_amarillo[0][0][2] != 6:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha Abajo")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+    if 6 in fila3_am:
+        while f_amarillo[0][0][2] != 6:
+            abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+            print("Abajo derecha")
+        derecha_abajo(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha Abajo")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        derecha_arriba(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("derecha arriba")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        abajo_derecha(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo derecha")
+        direccion_horaria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección horaria")
+        abajo_izquierda(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Abajo izquierda")
+        direccion_antihoraria(f_blanco, f_azul, f_naranja, f_verde, f_rojo, f_amarillo)
+        print("Dirección antihoraria")
+        
